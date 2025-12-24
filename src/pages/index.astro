@@ -1,0 +1,232 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ThemedImage from "../components/ThemedImage.astro";
+---
+
+<BaseLayout title="treeline">
+  <!-- Hero -->
+  <section class="hero max-w-3xl mx-auto px-6 pt-16 sm:pt-24 pb-16">
+    <div class="flex items-center gap-4 mb-6">
+      <!-- Light theme logo -->
+      <svg class="hero-logo logo-light" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+        <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+        <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+      </svg>
+      <!-- Dark theme logo -->
+      <svg class="hero-logo logo-dark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+        <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+        <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+      </svg>
+      <h1 class="text-4xl sm:text-5xl font-semibold">treeline</h1>
+    </div>
+    <p class="tagline text-2xl sm:text-3xl text-[var(--color-text)] font-medium mb-4">
+      Personal finance should be personal.
+    </p>
+    <p class="text-lg text-[var(--color-text-muted)]">
+      A local-first, plugin-based finance app that grows with you.
+    </p>
+
+    <!-- Scroll indicator - fades out once user scrolls -->
+    <div class="scroll-indicator" id="scroll-indicator">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 10l5 5 5-5"/>
+      </svg>
+    </div>
+  </section>
+
+  <script>
+    // Hide scroll indicator after user scrolls
+    const indicator = document.getElementById('scroll-indicator');
+    let hidden = false;
+
+    window.addEventListener('scroll', () => {
+      if (!hidden && window.scrollY > 50) {
+        hidden = true;
+        indicator?.style.setProperty('opacity', '0');
+      }
+    }, { passive: true });
+  </script>
+
+  <!-- Manifesto - The focal point -->
+  <section class="max-w-3xl mx-auto px-6 pb-20">
+    <div class="prose text-lg leading-relaxed space-y-6 text-[var(--color-text-muted)]">
+      <p>
+        I've had many distinct seasons in my adult life, and each one brings a fresh
+        perspective for how I think about money. Early on, I cared deeply about sticking
+        to a tight budget. Now, I'm more interested in long-term planning and exploring
+        different "what-if" scenarios. The highly custom spreadsheet I built when I was
+        22 is simply insufficient for the way I view money at 33.
+      </p>
+
+      <p>
+        I tried a few different finance apps and, while they brought convenience, they
+        all lacked <em>something</em>—because the way I wanted to view my money didn't
+        perfectly match The App's opinion of how I was <em>supposed</em> to view my money.
+      </p>
+
+      <p>
+        I want to tinker. I want to ask questions of my data that no product manager
+        anticipated. I want my tools to grow with me as my needs change.
+      </p>
+
+      <p>
+        So I built Treeline.
+      </p>
+
+      <p class="text-[var(--color-text)]">
+        <a href="/blog/manifesto">Read the full manifesto →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Screenshot -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <div class="screenshot-placeholder">
+      <span>Screenshot: Main app view</span>
+      <!--
+      <ThemedImage
+        light="/screenshots/app-light.png"
+        dark="/screenshots/app-dark.png"
+        alt="Treeline"
+        class="rounded-lg border border-[var(--color-border)] shadow-lg"
+      />
+      -->
+    </div>
+  </section>
+
+  <!-- What you get - Simple list -->
+  <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+    <div class="max-w-3xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-8">What you get</h2>
+
+      <ul class="space-y-4 text-[var(--color-text-muted)]">
+        <li>A desktop app for Mac, Windows, and Linux</li>
+        <li>Your data in a local DuckDB database</li>
+        <li>Bank sync via SimpleFIN, or CSV import</li>
+        <li>Envelope budgeting with rollover</li>
+        <li>A built-in SQL query editor</li>
+        <li>A plugin system for extending functionality</li>
+        <li>Optional database encryption</li>
+        <li>No account required, no subscription</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Plugins -->
+  <section class="border-t border-[var(--color-border)]">
+    <div class="max-w-3xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-4">Plugins</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        Core features like Budget and Accounts are plugins. Community plugins add
+        subscription tracking, savings goals, cash flow projections, and more. Or
+        build exactly what you need—the SDK gives you full access to your data.
+      </p>
+      <a href="https://github.com/treeline-money" class="text-[var(--color-accent)]">
+        Browse plugins →
+      </a>
+    </div>
+  </section>
+
+  <!-- Your data, your tools -->
+  <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
+    <div class="max-w-3xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-4">Your data, your tools</h2>
+      <p class="text-[var(--color-text-muted)]">
+        The database is just a file. Query it with the DuckDB CLI. Analyze it in a
+        Jupyter notebook. Write Python scripts. Export to CSV. Back it up however
+        you want. No API keys, no rate limits.
+      </p>
+    </div>
+  </section>
+
+  <!-- Get treeline -->
+  <section class="border-t border-[var(--color-border)]">
+    <div class="max-w-3xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-4">Get treeline</h2>
+      <p class="text-[var(--color-text-muted)] mb-8">
+        treeline is in beta. Join the Discord for early access and to share feedback.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="https://discord.gg/treeline"
+          class="px-5 py-2.5 bg-[var(--color-accent)] text-white font-medium rounded-md hover:bg-[var(--color-accent-muted)] transition-colors"
+        >
+          Join Discord
+        </a>
+        <a
+          href="https://github.com/treeline-money/treeline"
+          class="px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-text)] font-medium rounded-md hover:border-[var(--color-text-muted)] transition-colors"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-logo {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 640px) {
+    .hero-logo {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  .tagline {
+    letter-spacing: -0.02em;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-text-muted);
+    opacity: 0.4;
+    transition: opacity 0.4s ease;
+    animation: gentle-bounce 3s ease-in-out infinite;
+  }
+
+  @keyframes gentle-bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(6px);
+    }
+  }
+
+  .screenshot-placeholder {
+    background: var(--color-bg-secondary);
+    border: 2px dashed var(--color-border);
+    border-radius: 8px;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 350px;
+  }
+
+  .screenshot-placeholder span {
+    color: var(--color-text-muted);
+    font-size: 14px;
+    font-style: italic;
+  }
+</style>

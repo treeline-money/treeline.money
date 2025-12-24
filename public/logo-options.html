@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Treeline Logo Options</title>
+  <style>
+    body {
+      font-family: -apple-system, system-ui, sans-serif;
+      padding: 40px;
+      background: #f5f5f4;
+    }
+    .dark {
+      background: #1a1a19;
+      color: white;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+    .logo-card {
+      text-align: center;
+    }
+    .logo-card h3 {
+      margin: 16px 0 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .logo-card p {
+      font-size: 12px;
+      color: #666;
+      margin: 0;
+    }
+    .dark .logo-card p {
+      color: #999;
+    }
+    svg {
+      width: 80px;
+      height: 80px;
+    }
+    .sizes {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .sizes svg {
+      width: auto;
+      height: auto;
+    }
+    h2 {
+      margin: 40px 0 20px;
+      font-size: 18px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .dark h2 {
+      border-color: #444;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Treeline Logo Options</h1>
+
+<h2>Light Background</h2>
+<div class="grid">
+
+  <!-- Option A: Mountain with treeline -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Mountain -->
+      <path d="M8 48 L32 16 L56 48 Z" fill="#4a8a63"/>
+      <!-- Treeline (horizontal cut) -->
+      <path d="M8 48 L32 16 L56 48 L56 52 L8 52 Z" fill="#4a8a63"/>
+      <rect x="8" y="36" width="48" height="16" fill="#f5f5f4"/>
+      <!-- Trees below treeline -->
+      <path d="M14 52 L17 44 L20 52 Z" fill="#4a8a63"/>
+      <path d="M22 52 L26 42 L30 52 Z" fill="#4a8a63"/>
+      <path d="M32 52 L37 40 L42 52 Z" fill="#4a8a63"/>
+      <path d="M44 52 L48 44 L52 52 Z" fill="#4a8a63"/>
+    </svg>
+    <h3>A: Mountain with Trees</h3>
+    <p>Classic treeline concept</p>
+  </div>
+
+  <!-- Option B: Abstract pine -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 8 L44 28 L38 28 L48 44 L40 44 L50 58 L14 58 L24 44 L16 44 L26 28 L20 28 Z" fill="#4a8a63"/>
+    </svg>
+    <h3>B: Stylized Pine</h3>
+    <p>Simple evergreen tree</p>
+  </div>
+
+  <!-- Option C: Minimal mountain peak -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="3" fill="none"/>
+      <line x1="10" y1="38" x2="54" y2="38" stroke="#4a8a63" stroke-width="3"/>
+    </svg>
+    <h3>C: Minimal Peak</h3>
+    <p>Outline with treeline</p>
+  </div>
+
+  <!-- Option D: Geometric tree -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <h3>D: Geometric Tree</h3>
+    <p>Clean triangle + trunk</p>
+  </div>
+
+  <!-- Option E: Stacked peaks -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 52 L32 28 L44 52 Z" fill="#4a8a63"/>
+      <path d="M8 52 L20 32 L32 52 Z" fill="#4a8a63" opacity="0.6"/>
+      <path d="M32 52 L44 32 L56 52 Z" fill="#4a8a63" opacity="0.6"/>
+    </svg>
+    <h3>E: Mountain Range</h3>
+    <p>Layered peaks</p>
+  </div>
+
+  <!-- Option F: Circle with mountain -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" stroke="#4a8a63" stroke-width="2" fill="none"/>
+      <path d="M14 44 L32 20 L50 44 Z" fill="#4a8a63"/>
+    </svg>
+    <h3>F: Circled Peak</h3>
+    <p>Contained, app-icon friendly</p>
+  </div>
+
+  <!-- Option G: Simple T + tree -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 56 L32 28 L32 20 L24 34 L32 20 L40 34 L32 20 L32 12" stroke="#4a8a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <h3>G: Line Tree</h3>
+    <p>Minimalist stroke</p>
+  </div>
+
+  <!-- Option H: Abstract TL -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- T as mountain -->
+      <path d="M12 20 L52 20" stroke="#4a8a63" stroke-width="4" stroke-linecap="round"/>
+      <path d="M32 20 L32 52" stroke="#4a8a63" stroke-width="4" stroke-linecap="round"/>
+      <!-- Tree accent -->
+      <path d="M44 52 L44 36 L52 36" stroke="#4a8a63" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h3>H: TL Monogram</h3>
+    <p>Initials as mark</p>
+  </div>
+
+</div>
+
+<h2>Dark Background</h2>
+<div class="grid dark" style="background: #1a1a19; padding: 30px; border-radius: 8px;">
+
+  <!-- Same options but with dark theme colors -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 48 L32 16 L56 48 Z" fill="#6aaa83"/>
+      <path d="M8 48 L32 16 L56 48 L56 52 L8 52 Z" fill="#6aaa83"/>
+      <rect x="8" y="36" width="48" height="16" fill="#1a1a19"/>
+      <path d="M14 52 L17 44 L20 52 Z" fill="#6aaa83"/>
+      <path d="M22 52 L26 42 L30 52 Z" fill="#6aaa83"/>
+      <path d="M32 52 L37 40 L42 52 Z" fill="#6aaa83"/>
+      <path d="M44 52 L48 44 L52 52 Z" fill="#6aaa83"/>
+    </svg>
+    <h3>A: Mountain with Trees</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 8 L44 28 L38 28 L48 44 L40 44 L50 58 L14 58 L24 44 L16 44 L26 28 L20 28 Z" fill="#6aaa83"/>
+    </svg>
+    <h3>B: Stylized Pine</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="3" fill="none"/>
+      <line x1="10" y1="38" x2="54" y2="38" stroke="#6aaa83" stroke-width="3"/>
+    </svg>
+    <h3>C: Minimal Peak</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#6aaa83"/>
+      <polygon points="32,8 52,44 12,44" fill="#6aaa83"/>
+    </svg>
+    <h3>D: Geometric Tree</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 52 L32 28 L44 52 Z" fill="#6aaa83"/>
+      <path d="M8 52 L20 32 L32 52 Z" fill="#6aaa83" opacity="0.6"/>
+      <path d="M32 52 L44 32 L56 52 Z" fill="#6aaa83" opacity="0.6"/>
+    </svg>
+    <h3>E: Mountain Range</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" stroke="#6aaa83" stroke-width="2" fill="none"/>
+      <path d="M14 44 L32 20 L50 44 Z" fill="#6aaa83"/>
+    </svg>
+    <h3>F: Circled Peak</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 56 L32 28 L32 20 L24 34 L32 20 L40 34 L32 20 L32 12" stroke="#6aaa83" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <h3>G: Line Tree</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 20 L52 20" stroke="#6aaa83" stroke-width="4" stroke-linecap="round"/>
+      <path d="M32 20 L32 52" stroke="#6aaa83" stroke-width="4" stroke-linecap="round"/>
+      <path d="M44 52 L44 36 L52 36" stroke="#6aaa83" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h3>H: TL Monogram</h3>
+  </div>
+
+</div>
+
+<h2>Option C Final - Single V Jag</h2>
+<div class="grid">
+
+  <!-- C-Final: Single V-shaped jag -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees with single V jag -->
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>C-Final: Single V</h3>
+    <p>Clean, minimal</p>
+  </div>
+
+  <!-- Variation: Deeper V -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees with deeper V -->
+      <path d="M20 35 L32 27 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Deeper V</h3>
+    <p>More pronounced dip</p>
+  </div>
+
+  <!-- Variation: Shallower V -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees with shallow V -->
+      <path d="M20 35 L32 32 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Shallow V</h3>
+    <p>Subtle dip</p>
+  </div>
+
+  <!-- Variation: No outline -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L20 35 L32 30 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees -->
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+    </svg>
+    <h3>No Outline</h3>
+    <p>Just the shapes</p>
+  </div>
+
+  <!-- Variation: Thicker outline -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <!-- Trees -->
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>Bold Outline</h3>
+    <p>Stronger presence</p>
+  </div>
+
+  <!-- Variation: Offset V (asymmetric) - FLIPPED (V points up into snow) -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap with V notch -->
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees -->
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Offset V (Flipped)</h3>
+    <p>V points up into snow</p>
+  </div>
+
+  <!-- More flipped V variations -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap with centered V notch -->
+      <path d="M32 12 L20 35 L32 40 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees -->
+      <path d="M20 35 L32 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Centered V (Flipped)</h3>
+    <p>Symmetric upward V</p>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap with deeper V notch -->
+      <path d="M32 12 L20 35 L35 43 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees -->
+      <path d="M20 35 L35 43 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Deep Offset V</h3>
+    <p>More pronounced</p>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap with shallow V notch -->
+      <path d="M32 12 L20 35 L35 38 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees -->
+      <path d="M20 35 L35 38 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Shallow Offset V</h3>
+    <p>Subtle notch</p>
+  </div>
+
+</div>
+
+<h2>Single V - Dark Background</h2>
+<div class="grid dark" style="background: #1a1a19; padding: 30px; border-radius: 8px;">
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>C-Final: Single V</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L32 27 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Deeper V</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L32 32 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Shallow V</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L32 30 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+    </svg>
+    <h3>No Outline</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>Bold Outline</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 29 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Offset V</h3>
+  </div>
+
+</div>
+
+<h2>Size Test (Single V Final)</h2>
+<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;">
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">16px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">24px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">32px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">48px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">64px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="128" height="128" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L32 30 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">128px</p>
+  </div>
+</div>
+
+<h2>Option C Refined</h2>
+<div class="grid">
+
+  <!-- C1: Snow top, green bottom, jagged treeline -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap (top) -->
+      <path d="M32 12 L19 36 L45 36 Z" fill="#e8e8e7"/>
+      <!-- Trees (bottom) with jagged top edge -->
+      <path d="M19 36 L22 33 L26 36 L29 32 L32 36 L35 32 L38 36 L42 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2" fill="none"/>
+    </svg>
+    <h3>C1: Jagged Treeline</h3>
+    <p>Snow + trees, subtle jags</p>
+  </div>
+
+  <!-- C2: More pronounced jags -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap (top) -->
+      <path d="M32 12 L19 36 L45 36 Z" fill="#e8e8e7"/>
+      <!-- Trees (bottom) with more jagged top -->
+      <path d="M19 36 L21 32 L24 36 L27 30 L30 36 L32 31 L34 36 L37 30 L40 36 L43 32 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2" fill="none"/>
+    </svg>
+    <h3>C2: Pronounced Jags</h3>
+    <p>Taller tree peaks</p>
+  </div>
+
+  <!-- C3: Filled version, no outline -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap (top) -->
+      <path d="M32 12 L19 36 L22 33 L26 36 L29 32 L32 36 L35 32 L38 36 L42 33 L45 36 Z" fill="#f5f5f4"/>
+      <!-- Trees (bottom) -->
+      <path d="M19 36 L22 33 L26 36 L29 32 L32 36 L35 32 L38 36 L42 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+    </svg>
+    <h3>C3: No Outline</h3>
+    <p>Clean filled shapes</p>
+  </div>
+
+  <!-- C4: Thicker outline, white snow -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <!-- Trees with jagged edge -->
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>C4: White Snow</h3>
+    <p>Pure white cap</p>
+  </div>
+
+  <!-- C5: Asymmetric jags (more natural) -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L19 36 L45 36 Z" fill="#f0f0ef"/>
+      <!-- Trees with asymmetric jagged edge -->
+      <path d="M19 36 L21 34 L24 36 L26 31 L29 35 L32 33 L36 36 L38 32 L41 35 L44 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2" fill="none"/>
+    </svg>
+    <h3>C5: Asymmetric</h3>
+    <p>Natural tree variation</p>
+  </div>
+
+  <!-- C6: Minimal jags, clean -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap -->
+      <path d="M32 12 L20 35 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees with gentle jags -->
+      <path d="M20 35 L24 33 L28 35 L32 32 L36 35 L40 33 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Thin outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#3d7554" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>C6: Minimal Jags</h3>
+    <p>Subtle, clean</p>
+  </div>
+
+</div>
+
+<h2>Option C Refined - Dark Background</h2>
+<div class="grid dark" style="background: #1a1a19; padding: 30px; border-radius: 8px;">
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L22 33 L26 36 L29 32 L32 36 L35 32 L38 36 L42 33 L45 36 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2" fill="none"/>
+    </svg>
+    <h3>C1: Jagged Treeline</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 32 L24 36 L27 30 L30 36 L32 31 L34 36 L37 30 L40 36 L43 32 L45 36 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2" fill="none"/>
+    </svg>
+    <h3>C2: Pronounced Jags</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L22 33 L26 36 L29 32 L32 36 L35 32 L38 36 L42 33 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L22 33 L26 36 L29 32 L32 36 L35 32 L38 36 L42 33 L45 36 L54 52 L10 52 Z" fill="#6aaa83"/>
+    </svg>
+    <h3>C3: No Outline</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>C4: White Snow</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#f0f0ef"/>
+      <path d="M19 36 L21 34 L24 36 L26 31 L29 35 L32 33 L36 36 L38 32 L41 35 L44 33 L45 36 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2" fill="none"/>
+    </svg>
+    <h3>C5: Asymmetric</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L24 33 L28 35 L32 32 L36 35 L40 33 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>C6: Minimal Jags</h3>
+  </div>
+
+</div>
+
+<h2>Size Test (Option C4)</h2>
+<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">16px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">24px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">32px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">48px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">64px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="128" height="128" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L19 36 L45 36 Z" fill="#ffffff"/>
+      <path d="M19 36 L21 33 L25 36 L28 32 L32 36 L36 32 L39 36 L43 33 L45 36 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">128px</p>
+  </div>
+</div>
+
+<h2>Size Test (Option D)</h2>
+<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">16px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">24px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">32px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">48px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">64px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" width="128" height="128" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="28" y="44" width="8" height="12" fill="#4a8a63"/>
+      <polygon points="32,8 52,44 12,44" fill="#4a8a63"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">128px</p>
+  </div>
+</div>
+
+<h2>Flipped V - Dark Background</h2>
+<div class="grid dark" style="background: #1a1a19; padding: 30px; border-radius: 8px;">
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Offset V (Flipped)</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L32 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L32 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Centered V (Flipped)</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 43 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 43 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Deep Offset V</h3>
+  </div>
+
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 38 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 38 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#7cba93" stroke-width="1.5" fill="none"/>
+    </svg>
+    <h3>Shallow Offset V</h3>
+  </div>
+
+</div>
+
+<h2>FINAL: Offset V (Flipped) + Bold Outline</h2>
+<div class="grid">
+
+  <!-- Light theme -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Snow cap with V notch pointing up -->
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <!-- Trees -->
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <!-- Bold outline -->
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>Light Theme</h3>
+    <p>Final logo</p>
+  </div>
+
+  <!-- Light theme - white snow -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>Light (White Snow)</h3>
+    <p>Pure white cap</p>
+  </div>
+
+</div>
+
+<div class="grid dark" style="background: #1a1a19; padding: 30px; border-radius: 8px; margin-top: 20px;">
+
+  <!-- Dark theme -->
+  <div class="logo-card">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <h3>Dark Theme</h3>
+    <p>Final logo</p>
+  </div>
+
+</div>
+
+<h2>Size Test (Final Logo)</h2>
+<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap; margin-bottom: 20px;">
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 16px; height: 16px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">16px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 24px; height: 24px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">24px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 32px; height: 32px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">32px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 48px; height: 48px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">48px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 64px; height: 64px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">64px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 128px; height: 128px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px;">128px</p>
+  </div>
+</div>
+
+<p style="color: #666; font-size: 13px;">Dark theme size test:</p>
+<div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap; background: #1a1a19; padding: 20px; border-radius: 8px;">
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 16px; height: 16px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px; color: #999;">16px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 24px; height: 24px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px; color: #999;">24px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 32px; height: 32px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px; color: #999;">32px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 48px; height: 48px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px; color: #999;">48px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 64px; height: 64px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px; color: #999;">64px</p>
+  </div>
+  <div style="text-align: center;">
+    <svg viewBox="0 0 64 64" style="width: 128px; height: 128px;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/>
+      <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/>
+      <path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/>
+    </svg>
+    <p style="font-size: 11px; margin-top: 4px; color: #999;">128px</p>
+  </div>
+</div>
+
+<p style="margin-top: 40px; color: #888; font-size: 13px;">Open this file in a browser to preview. Pick your favorite and I'll export it as the final SVG.</p>
+
+</body>
+</html>

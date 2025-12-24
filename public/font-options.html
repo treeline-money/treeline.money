@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>treeline Font Options</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Outfit:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, system-ui, sans-serif;
+      padding: 40px;
+      background: #f5f5f4;
+      color: #1c1c1c;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 40px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      color: #4a8a63;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 40px;
+    }
+
+    /* Font preview cards */
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .font-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .font-card:hover {
+      border-color: #4a8a63;
+    }
+    .font-name {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .font-preview {
+      margin-bottom: 16px;
+    }
+    .brand-name {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+    .tagline {
+      font-size: 16px;
+      color: #525252;
+    }
+    .body-sample {
+      font-size: 14px;
+      color: #525252;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+    }
+
+    /* Brand lockup with logo */
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .brand-lockup svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+
+    /* Dark mode section */
+    .dark-section {
+      background: #1a1a19;
+      color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+    .dark-section h2 {
+      color: #6aaa83;
+      border-color: #454544;
+    }
+    .dark-section .font-card {
+      background: #232322;
+      border-color: #454544;
+    }
+    .dark-section .font-card:hover {
+      border-color: #6aaa83;
+    }
+    .dark-section .font-name {
+      color: #858584;
+    }
+    .dark-section .tagline,
+    .dark-section .body-sample {
+      color: #c5c5c4;
+    }
+    .dark-section .body-sample {
+      border-color: #363635;
+    }
+
+    /* Monospace section */
+    .mono-preview {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+
+    /* Comparison section */
+    .comparison {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .comparison-item {
+      flex: 1;
+      min-width: 300px;
+    }
+    .comparison-label {
+      font-size: 11px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .comparison-text {
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -1px;
+      color: #1c1c1c;
+    }
+
+    /* Recommended badge */
+    .recommended {
+      display: inline-block;
+      background: #4a8a63;
+      color: white;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>treeline Font Exploration</h1>
+<p class="subtitle">Comparing font options for the brand name, headings, and body text</p>
+
+<!-- Logo for reference -->
+<svg id="logo" viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 20px;">
+  <path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/>
+  <path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/>
+  <path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/>
+</svg>
+
+<h2>Sans-Serif Options (Headings & UI)</h2>
+<div class="font-grid">
+
+  <div class="font-card">
+    <div class="font-name">Inter <span class="recommended">Current System Default</span></div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'Inter', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'Inter', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'Inter', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">Space Grotesk</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'Space Grotesk', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'Space Grotesk', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'Space Grotesk', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">IBM Plex Sans</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'IBM Plex Sans', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'IBM Plex Sans', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'IBM Plex Sans', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">Outfit</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'Outfit', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'Outfit', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'Outfit', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">Manrope</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'Manrope', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'Manrope', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'Manrope', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">Sora</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'Sora', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'Sora', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'Sora', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">DM Sans</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'DM Sans', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'DM Sans', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'DM Sans', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">Plus Jakarta Sans</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="brand-name" style="font-family: 'Plus Jakarta Sans', sans-serif;">treeline</span>
+      </div>
+      <div class="tagline" style="font-family: 'Plus Jakarta Sans', sans-serif;">Personal finance should be personal.</div>
+    </div>
+    <div class="body-sample" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+      Your data lives in a real database on your machine, in an open format you can query, analyze, and export.
+    </div>
+  </div>
+
+</div>
+
+<h2>Monospace Options (Brand Name in Desktop App)</h2>
+<p style="color: #666; margin-bottom: 20px;">The desktop app currently uses JetBrains Mono for the "treeline" text in the sidebar.</p>
+<div class="font-grid">
+
+  <div class="font-card">
+    <div class="font-name">JetBrains Mono <span class="recommended">Current</span></div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="mono-preview" style="font-family: 'JetBrains Mono', monospace;">treeline</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">IBM Plex Mono</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="mono-preview" style="font-family: 'IBM Plex Mono', monospace;">treeline</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">Space Mono</div>
+    <div class="font-preview">
+      <div class="brand-lockup">
+        <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#f5f5f4"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#4a8a63"/><path d="M32 12 L54 52 L10 52 Z" stroke="#4a8a63" stroke-width="2.5" fill="none"/></svg>
+        <span class="mono-preview" style="font-family: 'Space Mono', monospace;">treeline</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Dark Mode Section -->
+<div class="dark-section">
+  <h2>Dark Mode Preview</h2>
+  <div class="font-grid">
+
+    <div class="font-card">
+      <div class="font-name">Inter</div>
+      <div class="font-preview">
+        <div class="brand-lockup">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/><path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/></svg>
+          <span class="brand-name" style="font-family: 'Inter', sans-serif;">treeline</span>
+        </div>
+        <div class="tagline" style="font-family: 'Inter', sans-serif;">Personal finance should be personal.</div>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <div class="font-name">Space Grotesk</div>
+      <div class="font-preview">
+        <div class="brand-lockup">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/><path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/></svg>
+          <span class="brand-name" style="font-family: 'Space Grotesk', sans-serif;">treeline</span>
+        </div>
+        <div class="tagline" style="font-family: 'Space Grotesk', sans-serif;">Personal finance should be personal.</div>
+      </div>
+    </div>
+
+    <div class="font-card">
+      <div class="font-name">JetBrains Mono (Sidebar)</div>
+      <div class="font-preview">
+        <div class="brand-lockup">
+          <svg viewBox="0 0 64 64" fill="none"><path d="M32 12 L20 35 L35 40 L44 35 Z" fill="#ffffff"/><path d="M20 35 L35 40 L44 35 L54 52 L10 52 Z" fill="#6aaa83"/><path d="M32 12 L54 52 L10 52 Z" stroke="#6aaa83" stroke-width="2.5" fill="none"/></svg>
+          <span class="mono-preview" style="font-family: 'JetBrains Mono', monospace;">treeline</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h2>Side-by-Side Comparison (Large)</h2>
+<div class="comparison">
+  <div class="comparison-item">
+    <div class="comparison-label">Inter (System-like)</div>
+    <div class="comparison-text" style="font-family: 'Inter', sans-serif;">treeline</div>
+  </div>
+  <div class="comparison-item">
+    <div class="comparison-label">Space Grotesk (Geometric)</div>
+    <div class="comparison-text" style="font-family: 'Space Grotesk', sans-serif;">treeline</div>
+  </div>
+  <div class="comparison-item">
+    <div class="comparison-label">Outfit (Friendly)</div>
+    <div class="comparison-text" style="font-family: 'Outfit', sans-serif;">treeline</div>
+  </div>
+</div>
+
+<div class="comparison" style="margin-top: 30px;">
+  <div class="comparison-item">
+    <div class="comparison-label">Sora (Modern)</div>
+    <div class="comparison-text" style="font-family: 'Sora', sans-serif;">treeline</div>
+  </div>
+  <div class="comparison-item">
+    <div class="comparison-label">Plus Jakarta Sans (Clean)</div>
+    <div class="comparison-text" style="font-family: 'Plus Jakarta Sans', sans-serif;">treeline</div>
+  </div>
+  <div class="comparison-item">
+    <div class="comparison-label">JetBrains Mono (Code)</div>
+    <div class="comparison-text" style="font-family: 'JetBrains Mono', monospace;">treeline</div>
+  </div>
+</div>
+
+<p style="margin-top: 40px; color: #888; font-size: 13px;">Open this file in a browser to compare fonts. Consider: readability, brand personality, and pairing with the mountain logo.</p>
+
+</body>
+</html>

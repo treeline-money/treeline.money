@@ -1,0 +1,38 @@
+---
+/**
+ * ThemedImage - Displays different images for light/dark themes
+ *
+ * Usage:
+ *   <ThemedImage
+ *     light="/screenshots/budget-light.png"
+ *     dark="/screenshots/budget-dark.png"
+ *     alt="Budget view"
+ *   />
+ *
+ * The component automatically shows the correct image based on the current theme.
+ */
+
+interface Props {
+  light: string;
+  dark: string;
+  alt: string;
+  class?: string;
+}
+
+const { light, dark, alt, class: className = "" } = Astro.props;
+---
+
+<div class={`themed-image ${className}`}>
+  <img src={light} alt={alt} class="img-light" loading="lazy" />
+  <img src={dark} alt={alt} class="img-dark" loading="lazy" />
+</div>
+
+<style>
+  .themed-image {
+    position: relative;
+  }
+  .themed-image img {
+    width: 100%;
+    height: auto;
+  }
+</style>
