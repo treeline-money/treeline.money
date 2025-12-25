@@ -45,7 +45,7 @@ The best way to understand Treeline is through another app: [Obsidian](https://o
 
 Your financial data lives in a single, local database file on your computer. Standard format (DuckDB), documented schema. Query it with SQL, open it in Python, plug it into whatever tools you want. If Treeline disappeared tomorrow, your data isn't going anywhere. And if you prefer the terminal, Treeline ships with a CLI—you can skip the desktop app entirely and manage everything from the command line.
 
-The app is just a UI on top of that database—and (almost) everything is a plugins. The accounts view, the budget view, the transactions view: these come with the app by default, but they use the same plugin system available to anyone. Want a FIRE calculator that uses your actual spending data instead of made-up estimates? Want a different budgeting philosophy? Want to track something weird that only matters to you? That's what plugins are for.
+The app is just a UI on top of that database-and (almost) everything is a plugin. The accounts view, the budget view, the transactions view: these come with the app by default, but they use the same plugin system available to anyone. Want a FIRE calculator that uses your actual spending data instead of made-up estimates? Want a different budgeting philosophy? Want to track something weird that only matters to you? That's what plugins are for.
 
 Bank sync is optional. If you want automation, Treeline connects to third-party services that handle the actual bank connections—your credentials never touch Treeline. If you'd rather import CSVs or enter transactions manually, those are first-class options too.
 
