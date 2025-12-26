@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ThemedImage from "../components/ThemedImage.astro";
+import { plugins } from "../data/plugins";
 ---
 
 <BaseLayout title="treeline">
@@ -115,17 +116,36 @@ import ThemedImage from "../components/ThemedImage.astro";
   </section>
 
   <!-- Plugins -->
-  <section class="border-t border-[var(--color-border)]">
-    <div class="max-w-3xl mx-auto px-6 py-20">
+  <section class="border-t border-[var(--color-border)]" id="plugins">
+    <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="text-xl font-semibold mb-4">Plugins</h2>
-      <p class="text-[var(--color-text-muted)] mb-6">
+      <p class="text-[var(--color-text-muted)] mb-8">
         Core features like Budget and Accounts are plugins. Community plugins add
         subscription tracking, savings goals, cash flow projections, and more. Or
         build exactly what you need—the SDK gives you full access to your data.
       </p>
-      <a href="https://github.com/treeline-money" class="text-[var(--color-accent)]">
-        Browse plugins →
-      </a>
+
+      <!-- Plugin Grid -->
+      <div class="plugins-grid">
+        {plugins.map(plugin => (
+          <a href={`/plugins/${plugin.id}`} class="plugin-card">
+            <h3 class="plugin-card-title">{plugin.name}</h3>
+            <p class="plugin-card-description">{plugin.description}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+        <a href="/plugins" class="text-[var(--color-accent)] font-medium">
+          Browse all community plugins →
+        </a>
+        <span class="text-[var(--color-text-muted)]">
+          or
+          <a href="https://github.com/treeline-money/treeline" class="text-[var(--color-accent)]" target="_blank" rel="noopener noreferrer">
+            build your own
+          </a>
+        </span>
+      </div>
     </div>
   </section>
 
@@ -228,5 +248,40 @@ import ThemedImage from "../components/ThemedImage.astro";
     color: var(--color-text-muted);
     font-size: 14px;
     font-style: italic;
+  }
+
+  /* Plugins Grid */
+  .plugins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .plugin-card {
+    display: block;
+    text-decoration: none;
+    padding: 1.25rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .plugin-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .plugin-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .plugin-card-description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
   }
 </style>

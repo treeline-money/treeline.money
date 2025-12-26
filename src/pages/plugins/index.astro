@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { plugins } from "../../data/plugins";
+---
+
+<BaseLayout title="Plugins - Treeline">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-3xl font-semibold mb-4">Community Plugins</h1>
+      <p class="text-lg text-[var(--color-text-muted)] max-w-2xl">
+        Extend Treeline with plugins built by the community. Each plugin adds new
+        views and capabilities while keeping your data local.
+      </p>
+    </header>
+
+    <!-- Plugin Grid -->
+    <div class="plugins-grid">
+      {plugins.map(plugin => (
+        <a href={`/plugins/${plugin.id}`} class="plugin-card">
+          <h2 class="plugin-card-title">{plugin.name}</h2>
+          <p class="plugin-card-description">{plugin.description}</p>
+        </a>
+      ))}
+    </div>
+
+    <!-- Build your own CTA -->
+    <div class="build-cta">
+      <h2 class="text-lg font-semibold mb-2">Build your own plugin</h2>
+      <p class="text-[var(--color-text-muted)] mb-4">
+        The Plugin SDK gives you full access to your data. Build exactly what you need.
+      </p>
+      <a href="https://github.com/treeline-money/treeline" class="cta-link">
+        Get started with the SDK →
+      </a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .plugins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .plugin-card {
+    display: block;
+    text-decoration: none;
+    padding: 1.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .plugin-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .plugin-card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .plugin-card-description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .build-cta {
+    padding: 2rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .cta-link {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .cta-link:hover {
+    text-decoration: underline;
+  }
+</style>
