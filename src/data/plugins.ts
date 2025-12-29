@@ -7,6 +7,12 @@ export interface Plugin {
 
 export const plugins: Plugin[] = [
   {
+    id: "budget",
+    name: "Budget",
+    description: "Track spending against tag-based categories with monthly rollovers.",
+    repo: "https://github.com/treeline-money/plugin-budget"
+  },
+  {
     id: "emergency-fund",
     name: "Emergency Fund",
     description: "See how long your emergency fund would last based on your actual spending patterns.",

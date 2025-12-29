@@ -91,6 +91,7 @@ import { plugins } from "../data/plugins";
   <!-- Screenshots -->
   <section class="max-w-5xl mx-auto px-6 pb-20 space-y-8">
     <!-- Hero: Query editor showing the differentiator -->
+    <!--
     <div class="screenshot-placeholder">
       <div class="screenshot-placeholder-content">
         <span class="screenshot-label">Screenshot: Query editor</span>
@@ -105,27 +106,28 @@ GROUP BY dayofweek(transaction_date), day
 ORDER BY dayofweek(transaction_date)</pre>
         <p class="screenshot-note">"When do I spend the most?" — a question no other finance app can answer.</p>
       </div>
-      <!--
-      <ThemedImage
-        light="/screenshots/query-light.png"
-        dark="/screenshots/query-dark.png"
-        alt="Treeline query editor showing monthly income, expenses, and savings"
-        class="rounded-lg border border-[var(--color-border)] shadow-lg"
-      />
-      -->
     </div>
+    -->
+    <ThemedImage
+      light="/screenshots/query-light.png"
+      dark="/screenshots/query-dark.png"
+      alt="Treeline query editor showing spending by day of week"
+      class="rounded-lg border border-[var(--color-border)] shadow-lg"
+    />
 
     <!-- Secondary: Clean functional UI -->
+    <!--
     <div class="screenshot-placeholder screenshot-placeholder-small">
       <span class="screenshot-label">Screenshot: Accounts view</span>
       <p class="screenshot-note">Clean accounts list with balances. Shows it works as a normal finance app too.</p>
     </div>
-
-    <!-- Tertiary: Plugin ecosystem -->
-    <div class="screenshot-placeholder screenshot-placeholder-small">
-      <span class="screenshot-label">Screenshot: Plugin browser or Goals plugin</span>
-      <p class="screenshot-note">Either the "Browse Plugins" screen or a plugin in action. Label clearly: "Community plugin: Goals"</p>
-    </div>
+    -->
+    <ThemedImage
+      light="/screenshots/accounts-light.png"
+      dark="/screenshots/accounts-dark.png"
+      alt="Treeline accounts view showing account balances"
+      class="rounded-lg border border-[var(--color-border)] shadow-lg"
+    />
   </section>
 
   <!-- What you get - Simple list -->
@@ -211,12 +213,6 @@ ORDER BY dayofweek(transaction_date)</pre>
           class="px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-text)] font-medium rounded-md hover:border-[var(--color-text-muted)] transition-colors"
         >
           Join Discord
-        </a>
-        <a
-          href="https://github.com/treeline-money/treeline"
-          class="px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-text)] font-medium rounded-md hover:border-[var(--color-text-muted)] transition-colors"
-        >
-          GitHub
         </a>
       </div>
     </div>
