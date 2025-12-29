@@ -88,18 +88,43 @@ import { plugins } from "../data/plugins";
     </div>
   </section>
 
-  <!-- Screenshot -->
-  <section class="max-w-5xl mx-auto px-6 pb-20">
+  <!-- Screenshots -->
+  <section class="max-w-5xl mx-auto px-6 pb-20 space-y-8">
+    <!-- Hero: Query editor showing the differentiator -->
     <div class="screenshot-placeholder">
-      <span>Screenshot: Main app view</span>
+      <div class="screenshot-placeholder-content">
+        <span class="screenshot-label">Screenshot: Query editor</span>
+        <p class="screenshot-description">Show a query like this running with results:</p>
+        <pre class="screenshot-query">SELECT
+  dayname(transaction_date) AS day,
+  COUNT(*) AS transactions,
+  SUM(-amount) AS total_spent
+FROM transactions
+WHERE amount &lt; 0
+GROUP BY dayofweek(transaction_date), day
+ORDER BY dayofweek(transaction_date)</pre>
+        <p class="screenshot-note">"When do I spend the most?" — a question no other finance app can answer.</p>
+      </div>
       <!--
       <ThemedImage
-        light="/screenshots/app-light.png"
-        dark="/screenshots/app-dark.png"
-        alt="Treeline"
+        light="/screenshots/query-light.png"
+        dark="/screenshots/query-dark.png"
+        alt="Treeline query editor showing monthly income, expenses, and savings"
         class="rounded-lg border border-[var(--color-border)] shadow-lg"
       />
       -->
+    </div>
+
+    <!-- Secondary: Clean functional UI -->
+    <div class="screenshot-placeholder screenshot-placeholder-small">
+      <span class="screenshot-label">Screenshot: Accounts view</span>
+      <p class="screenshot-note">Clean accounts list with balances. Shows it works as a normal finance app too.</p>
+    </div>
+
+    <!-- Tertiary: Plugin ecosystem -->
+    <div class="screenshot-placeholder screenshot-placeholder-small">
+      <span class="screenshot-label">Screenshot: Plugin browser or Goals plugin</span>
+      <p class="screenshot-note">Either the "Browse Plugins" screen or a plugin in action. Label clearly: "Community plugin: Goals"</p>
     </div>
   </section>
 
@@ -248,7 +273,7 @@ import { plugins } from "../data/plugins";
     background: var(--color-bg-secondary);
     border: 2px dashed var(--color-border);
     border-radius: 8px;
-    padding: 4rem 2rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -256,9 +281,48 @@ import { plugins } from "../data/plugins";
     min-height: 350px;
   }
 
-  .screenshot-placeholder span {
+  .screenshot-placeholder-small {
+    min-height: 200px;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .screenshot-placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+  }
+
+  .screenshot-label {
     color: var(--color-text-muted);
     font-size: 14px;
+    font-style: italic;
+  }
+
+  .screenshot-description {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .screenshot-query {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 12px;
+    text-align: left;
+    color: var(--color-text);
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .screenshot-note {
+    color: var(--color-text-muted);
+    font-size: 12px;
+    margin: 0;
     font-style: italic;
   }
 
