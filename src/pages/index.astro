@@ -88,43 +88,8 @@ import { plugins } from "../data/plugins";
     </div>
   </section>
 
-  <!-- Screenshots -->
-  <section class="max-w-5xl mx-auto px-6 pb-20 space-y-12">
-    <!-- Hero: Query editor showing the differentiator -->
-    <!--
-    <div class="screenshot-placeholder">
-      <div class="screenshot-placeholder-content">
-        <span class="screenshot-label">Screenshot: Query editor</span>
-        <p class="screenshot-description">Show a query like this running with results:</p>
-        <pre class="screenshot-query">SELECT
-  dayname(transaction_date) AS day,
-  COUNT(*) AS transactions,
-  SUM(-amount) AS total_spent
-FROM transactions
-WHERE amount &lt; 0
-GROUP BY dayofweek(transaction_date), day
-ORDER BY dayofweek(transaction_date)</pre>
-        <p class="screenshot-note">"When do I spend the most?" — a question no other finance app can answer.</p>
-      </div>
-    </div>
-    -->
-    <button class="screenshot-btn" data-light="/screenshots/query-light.png" data-dark="/screenshots/query-dark.png" aria-label="View screenshot full size">
-      <ThemedImage
-        light="/screenshots/query-light.png"
-        dark="/screenshots/query-dark.png"
-        alt="Treeline query editor showing spending by day of week"
-        class="rounded-lg border border-[var(--color-border)] shadow-lg"
-      />
-      <span class="screenshot-hint">Tap to expand</span>
-    </button>
-
-    <!-- Secondary: Clean functional UI -->
-    <!--
-    <div class="screenshot-placeholder screenshot-placeholder-small">
-      <span class="screenshot-label">Screenshot: Accounts view</span>
-      <p class="screenshot-note">Clean accounts list with balances. Shows it works as a normal finance app too.</p>
-    </div>
-    -->
+  <!-- Screenshots: Accounts -->
+  <section class="max-w-5xl mx-auto px-6 pb-16">
     <button class="screenshot-btn" data-light="/screenshots/accounts-light.png" data-dark="/screenshots/accounts-dark.png" aria-label="View screenshot full size">
       <ThemedImage
         light="/screenshots/accounts-light.png"
@@ -136,11 +101,26 @@ ORDER BY dayofweek(transaction_date)</pre>
     </button>
   </section>
 
-  <!-- Lightbox for screenshots -->
-  <div id="screenshot-lightbox" class="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img class="lightbox-img" src="" alt="Screenshot expanded view" />
-  </div>
+  <!-- Screenshots: Transactions -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <h2 class="text-xl font-semibold mb-4 text-center">Smart transaction management</h2>
+    <p class="text-[var(--color-text-muted)] text-center mb-8 max-w-2xl mx-auto">
+      Tag transactions with a keystroke. Set up rules to categorize automatically.
+      Split transactions, hide duplicates, search across everything.
+    </p>
+    <div class="screenshots-grid">
+      <!-- Transactions list -->
+      <div class="screenshot-placeholder">
+        <span class="screenshot-label">Screenshot: Transactions view</span>
+        <p class="screenshot-note">Transaction list with quick tagging. Show the tag dropdown or keyboard shortcut.</p>
+      </div>
+      <!-- Rules modal -->
+      <div class="screenshot-placeholder">
+        <span class="screenshot-label">Screenshot: Tagging rules</span>
+        <p class="screenshot-note">Rules modal showing auto-categorization setup.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- What you get - Simple list -->
   <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
@@ -151,8 +131,7 @@ ORDER BY dayofweek(transaction_date)</pre>
         <li>A desktop app for Mac, Windows, and Linux</li>
         <li>Your data in a local DuckDB database</li>
         <li>Bank sync via SimpleFIN, or CSV import</li>
-        <li>Envelope budgeting with rollover</li>
-        <li>A built-in SQL query editor</li>
+        <li>Quick tagging with customizable rules</li>
         <li>A plugin system for extending functionality</li>
         <li>Optional database encryption</li>
         <li>No account required, no subscription</li>
@@ -194,15 +173,47 @@ ORDER BY dayofweek(transaction_date)</pre>
     </div>
   </section>
 
-  <!-- Your data, your tools -->
+  <!-- Go deeper: SQL -->
   <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
-    <div class="max-w-3xl mx-auto px-6 py-20">
-      <h2 class="text-xl font-semibold mb-4">Your data, your tools</h2>
-      <p class="text-[var(--color-text-muted)]">
-        The database is just a file. Query it with the DuckDB CLI. Analyze it in a
-        Jupyter notebook. Write Python scripts. Export to CSV. Back it up however
-        you want. No API keys, no rate limits.
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-4">Go deeper</h2>
+      <p class="text-[var(--color-text-muted)] mb-8">
+        Your data is a standard DuckDB file. When you want to ask questions no app anticipated,
+        use the built-in SQL editor—or query directly from the terminal, a Jupyter notebook,
+        or any tool that speaks SQL.
       </p>
+      <div class="query-example">
+        <div class="query-code">
+          <pre><code><span class="sql-keyword">SELECT</span>
+  <span class="sql-func">dayname</span>(transaction_date) <span class="sql-keyword">AS</span> day,
+  <span class="sql-func">COUNT</span>(*) <span class="sql-keyword">AS</span> transactions,
+  <span class="sql-func">SUM</span>(-amount) <span class="sql-keyword">AS</span> total_spent
+<span class="sql-keyword">FROM</span> transactions
+<span class="sql-keyword">WHERE</span> amount &lt; 0
+<span class="sql-keyword">GROUP BY</span> <span class="sql-func">dayofweek</span>(transaction_date), day
+<span class="sql-keyword">ORDER BY</span> <span class="sql-func">dayofweek</span>(transaction_date)</code></pre>
+        </div>
+        <div class="query-results">
+          <table>
+            <thead>
+              <tr>
+                <th>day</th>
+                <th>transactions</th>
+                <th>total_spent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Sunday</td><td>47</td><td>$312.84</td></tr>
+              <tr><td>Monday</td><td>89</td><td>$567.23</td></tr>
+              <tr><td>Tuesday</td><td>72</td><td>$445.91</td></tr>
+              <tr><td>Wednesday</td><td>68</td><td>$398.45</td></tr>
+              <tr><td>Thursday</td><td>81</td><td>$523.67</td></tr>
+              <tr><td>Friday</td><td>124</td><td>$891.32</td></tr>
+              <tr><td>Saturday</td><td>95</td><td>$634.18</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -229,6 +240,12 @@ ORDER BY dayofweek(transaction_date)</pre>
       </div>
     </div>
   </section>
+
+  <!-- Lightbox for screenshots -->
+  <div id="screenshot-lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" src="" alt="Screenshot expanded view" />
+  </div>
 </BaseLayout>
 
 <style>
@@ -291,6 +308,109 @@ ORDER BY dayofweek(transaction_date)</pre>
 
   .screenshot-btn + .screenshot-btn {
     margin-top: 3rem;
+  }
+
+  /* Screenshots grid */
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .screenshots-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Query example */
+  .query-example {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .query-code {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+  }
+
+  .query-code pre {
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text);
+  }
+
+  .query-code code {
+    font-family: inherit;
+  }
+
+  .sql-keyword {
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .sql-func {
+    color: #a78bfa;
+  }
+
+  :root.dark .sql-func {
+    color: #c4b5fd;
+  }
+
+  .query-results {
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+  }
+
+  .query-results table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  .query-results th,
+  .query-results td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .query-results th {
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .query-results td {
+    color: var(--color-text);
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  .query-results tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .query-results tbody tr:nth-child(6) td { /* Friday row */
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .query-caption {
+    padding: 1rem 1.5rem;
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
   }
 
   .screenshot-btn :global(img) {
