@@ -89,7 +89,7 @@ import { plugins } from "../data/plugins";
   </section>
 
   <!-- Screenshots -->
-  <section class="max-w-5xl mx-auto px-6 pb-20 space-y-8">
+  <section class="max-w-5xl mx-auto px-6 pb-20 space-y-12">
     <!-- Hero: Query editor showing the differentiator -->
     <!--
     <div class="screenshot-placeholder">
@@ -108,12 +108,15 @@ ORDER BY dayofweek(transaction_date)</pre>
       </div>
     </div>
     -->
-    <ThemedImage
-      light="/screenshots/query-light.png"
-      dark="/screenshots/query-dark.png"
-      alt="Treeline query editor showing spending by day of week"
-      class="rounded-lg border border-[var(--color-border)] shadow-lg"
-    />
+    <button class="screenshot-btn" data-light="/screenshots/query-light.png" data-dark="/screenshots/query-dark.png" aria-label="View screenshot full size">
+      <ThemedImage
+        light="/screenshots/query-light.png"
+        dark="/screenshots/query-dark.png"
+        alt="Treeline query editor showing spending by day of week"
+        class="rounded-lg border border-[var(--color-border)] shadow-lg"
+      />
+      <span class="screenshot-hint">Tap to expand</span>
+    </button>
 
     <!-- Secondary: Clean functional UI -->
     <!--
@@ -122,13 +125,22 @@ ORDER BY dayofweek(transaction_date)</pre>
       <p class="screenshot-note">Clean accounts list with balances. Shows it works as a normal finance app too.</p>
     </div>
     -->
-    <ThemedImage
-      light="/screenshots/accounts-light.png"
-      dark="/screenshots/accounts-dark.png"
-      alt="Treeline accounts view showing account balances"
-      class="rounded-lg border border-[var(--color-border)] shadow-lg"
-    />
+    <button class="screenshot-btn" data-light="/screenshots/accounts-light.png" data-dark="/screenshots/accounts-dark.png" aria-label="View screenshot full size">
+      <ThemedImage
+        light="/screenshots/accounts-light.png"
+        dark="/screenshots/accounts-dark.png"
+        alt="Treeline accounts view showing account balances"
+        class="rounded-lg border border-[var(--color-border)] shadow-lg"
+      />
+      <span class="screenshot-hint">Tap to expand</span>
+    </button>
   </section>
+
+  <!-- Lightbox for screenshots -->
+  <div id="screenshot-lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox-img" src="" alt="Screenshot expanded view" />
+  </div>
 
   <!-- What you get - Simple list -->
   <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
@@ -265,6 +277,92 @@ ORDER BY dayofweek(transaction_date)</pre>
     }
   }
 
+  /* Screenshot buttons */
+  .screenshot-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .screenshot-btn + .screenshot-btn {
+    margin-top: 3rem;
+  }
+
+  .screenshot-btn :global(img) {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease;
+  }
+
+  .screenshot-hint {
+    display: none;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+  }
+
+  @media (max-width: 768px) {
+    .screenshot-hint {
+      display: block;
+    }
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
   .screenshot-placeholder {
     background: var(--color-bg-secondary);
     border: 2px dashed var(--color-border);
@@ -357,3 +455,44 @@ ORDER BY dayofweek(transaction_date)</pre>
     line-height: 1.5;
   }
 </style>
+
+<script>
+  // Lightbox functionality
+  const lightbox = document.getElementById('screenshot-lightbox');
+  const lightboxImg = lightbox?.querySelector('.lightbox-img') as HTMLImageElement;
+  const lightboxClose = lightbox?.querySelector('.lightbox-close');
+  const screenshotBtns = document.querySelectorAll('.screenshot-btn');
+
+  function openLightbox(lightSrc: string, darkSrc: string) {
+    if (!lightbox || !lightboxImg) return;
+    const isDark = document.documentElement.classList.contains('dark');
+    lightboxImg.src = isDark ? darkSrc : lightSrc;
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  screenshotBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const light = btn.getAttribute('data-light') || '';
+      const dark = btn.getAttribute('data-dark') || '';
+      openLightbox(light, dark);
+    });
+  });
+
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
