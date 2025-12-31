@@ -108,17 +108,41 @@ import { plugins } from "../data/plugins";
       Tag transactions with a keystroke. Set up rules to categorize automatically.
       Split transactions, hide duplicates, search across everything.
     </p>
-    <div class="screenshots-grid">
-      <!-- Transactions list -->
-      <div class="screenshot-placeholder">
-        <span class="screenshot-label">Screenshot: Transactions view</span>
-        <p class="screenshot-note">Transaction list with quick tagging. Show the tag dropdown or keyboard shortcut.</p>
-      </div>
-      <!-- Rules modal -->
-      <div class="screenshot-placeholder">
-        <span class="screenshot-label">Screenshot: Tagging rules</span>
-        <p class="screenshot-note">Rules modal showing auto-categorization setup.</p>
-      </div>
+    <div class="screenshots-stack">
+      <!-- Transactions video -->
+      <button class="screenshot-btn video-btn" data-video-light="/screenshots/transactions-light.mov" data-video-dark="/screenshots/transactions-dark.mov" aria-label="View video full size">
+        <div class="screenshot-video-wrapper">
+          <video
+            class="screenshot-video video-light"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="/screenshots/transactions-light.mov" type="video/mp4" />
+          </video>
+          <video
+            class="screenshot-video video-dark"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="/screenshots/transactions-dark.mov" type="video/mp4" />
+          </video>
+        </div>
+        <span class="screenshot-hint">Tap to expand</span>
+      </button>
+      <!-- Rules screenshot -->
+      <button class="screenshot-btn" data-light="/screenshots/rules-light.png" data-dark="/screenshots/rules-dark.png" aria-label="View screenshot full size">
+        <ThemedImage
+          light="/screenshots/rules-light.png"
+          dark="/screenshots/rules-dark.png"
+          alt="Treeline tagging rules modal"
+          class="rounded-lg shadow-sm"
+        />
+        <span class="screenshot-hint">Tap to expand</span>
+      </button>
     </div>
   </section>
 
@@ -241,10 +265,13 @@ import { plugins } from "../data/plugins";
     </div>
   </section>
 
-  <!-- Lightbox for screenshots -->
+  <!-- Lightbox for screenshots and videos -->
   <div id="screenshot-lightbox" class="lightbox" aria-hidden="true">
     <button class="lightbox-close" aria-label="Close">&times;</button>
     <img class="lightbox-img" src="" alt="Screenshot expanded view" />
+    <video class="lightbox-video" autoplay loop muted playsinline>
+      <source src="" type="video/mp4" />
+    </video>
   </div>
 </BaseLayout>
 
@@ -321,6 +348,32 @@ import { plugins } from "../data/plugins";
     .screenshots-grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  /* Screenshots stack - always stacked vertically */
+  .screenshots-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .screenshots-stack > .screenshot-btn {
+    margin: 0;
+    padding: 0;
+  }
+
+  .screenshots-stack .screenshot-video-wrapper {
+    width: 100%;
+  }
+
+  .screenshots-stack .screenshot-video {
+    width: 100%;
+    height: auto;
+  }
+
+  .screenshots-stack :global(img) {
+    width: 100%;
+    height: auto;
   }
 
   /* Query example */
@@ -417,6 +470,11 @@ import { plugins } from "../data/plugins";
     width: 100%;
     height: auto;
     transition: transform 0.2s ease;
+    vertical-align: top;
+  }
+
+  .screenshot-btn .screenshot-video-wrapper {
+    vertical-align: top;
   }
 
   .screenshot-hint {
@@ -454,12 +512,18 @@ import { plugins } from "../data/plugins";
     display: flex;
   }
 
-  .lightbox-img {
+  .lightbox-img,
+  .lightbox-video {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
     border-radius: 8px;
   }
+
+  .lightbox-img { display: block; }
+  .lightbox-video { display: none; }
+  .lightbox.video-mode .lightbox-img { display: none; }
+  .lightbox.video-mode .lightbox-video { display: block; }
 
   .lightbox-close {
     position: absolute;
@@ -481,6 +545,32 @@ import { plugins } from "../data/plugins";
 
   .lightbox-close:hover {
     background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Themed video */
+  .screenshot-video-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .screenshot-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .video-light { display: block; }
+  .video-dark { display: none; }
+  :root.dark .video-light { display: none; }
+  :root.dark .video-dark { display: block; }
+
+  /* Ensure video button aligns with image button */
+  .video-btn .screenshot-video-wrapper {
+    margin: 0;
   }
 
   .screenshot-placeholder {
@@ -580,30 +670,54 @@ import { plugins } from "../data/plugins";
   // Lightbox functionality
   const lightbox = document.getElementById('screenshot-lightbox');
   const lightboxImg = lightbox?.querySelector('.lightbox-img') as HTMLImageElement;
+  const lightboxVideo = lightbox?.querySelector('.lightbox-video') as HTMLVideoElement;
+  const lightboxVideoSource = lightboxVideo?.querySelector('source') as HTMLSourceElement;
   const lightboxClose = lightbox?.querySelector('.lightbox-close');
   const screenshotBtns = document.querySelectorAll('.screenshot-btn');
 
-  function openLightbox(lightSrc: string, darkSrc: string) {
+  function openImageLightbox(lightSrc: string, darkSrc: string) {
     if (!lightbox || !lightboxImg) return;
     const isDark = document.documentElement.classList.contains('dark');
     lightboxImg.src = isDark ? darkSrc : lightSrc;
+    lightbox.classList.remove('video-mode');
     lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openVideoLightbox(lightSrc: string, darkSrc: string) {
+    if (!lightbox || !lightboxVideo || !lightboxVideoSource) return;
+    const isDark = document.documentElement.classList.contains('dark');
+    lightboxVideoSource.src = isDark ? darkSrc : lightSrc;
+    lightboxVideo.load();
+    lightboxVideo.play();
+    lightbox.classList.add('video-mode', 'active');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     if (!lightbox) return;
-    lightbox.classList.remove('active');
+    lightbox.classList.remove('active', 'video-mode');
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+    }
   }
 
   screenshotBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const light = btn.getAttribute('data-light') || '';
-      const dark = btn.getAttribute('data-dark') || '';
-      openLightbox(light, dark);
+      const videoLight = btn.getAttribute('data-video-light');
+      const videoDark = btn.getAttribute('data-video-dark');
+
+      if (videoLight && videoDark) {
+        openVideoLightbox(videoLight, videoDark);
+      } else {
+        const light = btn.getAttribute('data-light') || '';
+        const dark = btn.getAttribute('data-dark') || '';
+        openImageLightbox(light, dark);
+      }
     });
   });
 
