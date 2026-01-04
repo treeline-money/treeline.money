@@ -25,9 +25,26 @@ import { plugins } from "../data/plugins";
     <p class="tagline text-2xl sm:text-3xl text-[var(--color-text)] font-medium mb-4">
       Personal finance should be personal.
     </p>
-    <p class="text-lg text-[var(--color-text-muted)]">
-      A local-first, plugin-based finance app that grows with you.
+    <p class="text-lg text-[var(--color-text-muted)] mb-8">
+      A local-first, plugin-based finance app. Built on DuckDB.
     </p>
+
+    <div class="flex flex-wrap gap-4">
+      <a
+        href="/download"
+        class="px-5 py-2.5 bg-[var(--color-accent)] text-white font-medium rounded-md hover:bg-[var(--color-accent-muted)] transition-colors"
+      >
+        Download
+      </a>
+      <a
+        href="https://discord.gg/EcNvBnSft5"
+        class="px-5 py-2.5 border border-[var(--color-border)] text-[var(--color-text)] font-medium rounded-md hover:border-[var(--color-text-muted)] transition-colors"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join Discord
+      </a>
+    </div>
 
     <!-- Scroll indicator - fades out once user scrolls -->
     <div class="scroll-indicator" id="scroll-indicator">
@@ -54,17 +71,9 @@ import { plugins } from "../data/plugins";
   <section class="max-w-3xl mx-auto px-6 pb-20">
     <div class="prose text-lg leading-relaxed space-y-6 text-[var(--color-text-muted)]">
       <p>
-        I've had many distinct seasons in my adult life, and each one brings a fresh
-        perspective for how I think about money. Early on, I cared deeply about sticking
-        to a tight budget. Now, I'm more interested in long-term planning and exploring
-        different "what-if" scenarios. The highly custom spreadsheet I built when I was
-        22 is simply insufficient for the way I view money at 33.
-      </p>
-
-      <p>
         I tried a few different finance apps and, while they brought convenience, they
         all lacked <em>something</em>—because the way I wanted to view my money didn't
-        perfectly match The App's opinion of how I was <em>supposed</em> to view my money.
+        match The App's opinion of how I was <em>supposed</em> to view my money.
       </p>
 
       <p>
@@ -76,13 +85,7 @@ import { plugins } from "../data/plugins";
         So I built Treeline.
       </p>
 
-      <div class="flex flex-wrap items-center gap-4 pt-2">
-        <a
-          href="/download"
-          class="px-5 py-2.5 bg-[var(--color-accent)] text-white font-medium rounded-md hover:bg-[var(--color-accent-muted)] transition-colors"
-        >
-          Download
-        </a>
+      <div class="pt-2">
         <a href="/blog/manifesto" class="text-[var(--color-text)]">Keep reading →</a>
       </div>
     </div>

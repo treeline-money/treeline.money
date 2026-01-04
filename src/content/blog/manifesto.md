@@ -1,5 +1,5 @@
 ---
-title: "Personal finance should be... personal"
+title: "Why I built Treeline"
 date: 2025-12-24T12:00:00
 description: "Why your financial data should outlive any app"
 ---
@@ -27,9 +27,9 @@ These are *fundamentally*, *drastically* different ways of thinking about money.
 
 I tinkered with my custom spreadsheet for years until I finally got it *exactly* where I wanted it. And it was glorious... for a while. Then I had kids, free time evaporated, and my perspective shifted. Manually typing every transaction into my spreadsheet was no longer worth the effort when our spending habits and expenses were well-established. I tried a few different finance apps and, while they brought convenience, they all lacked *something* — because the way I wanted to view my money didn't perfectly match The App's opinion of how I was *supposed* to view my money. 
 
-I thought: "I wish I could just automatically get all my data on my computer, then I could build whatever I want on top!"
+I thought: *"I wish I could just automatically get all my data on my computer, then I could build whatever I want on top!"*
 
-With most (all?) of the existing apps out there, getting your data out is simply not a priority for them. The App *needs* your data locked in their servers so you'll pay them. I've always thought this was strange: "It's MY data, right? Why can't I just... have it?" They might give you an "export" button if you're lucky, but letting you easily have your data is not in The App's best interest.
+With most (all?) of the existing apps out there, getting your data out is simply not a priority for them. The App *needs* your data locked in their servers so you'll pay them. I've always thought this was strange: *"It's MY data, right? Why can't I just... have it?"* They might give you an "export" button if you're lucky, but letting you easily have your data is not in The App's best interest.
 
 Strip these apps down and you realize what you're actually paying for: bank sync and cloud infrastructure. Everything else is just SQL queries piped into charts, wrapped in someone else's opinion about how you should see your money.
 
