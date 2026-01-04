@@ -150,6 +150,20 @@ try {
     margin: 1.5rem 0;
   }
 
+  /* Theme-aware images: hide -light images in dark mode, -dark images in light mode */
+  .markdown-content :global(img[src*="-light"]) {
+    display: block;
+  }
+  .markdown-content :global(img[src*="-dark"]) {
+    display: none;
+  }
+  :root.dark .markdown-content :global(img[src*="-light"]) {
+    display: none;
+  }
+  :root.dark .markdown-content :global(img[src*="-dark"]) {
+    display: block;
+  }
+
   .markdown-content :global(a) {
     color: var(--color-accent);
     text-decoration: none;
