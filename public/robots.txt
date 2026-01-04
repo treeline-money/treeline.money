@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://treeline.money/sitemap-index.xml
