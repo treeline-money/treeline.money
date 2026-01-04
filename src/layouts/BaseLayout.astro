@@ -28,6 +28,56 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://treeline.money/og-image.png" />
 
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://treeline.money/#website",
+          "url": "https://treeline.money",
+          "name": "Treeline",
+          "description": "A local-first, plugin-based finance app. Built on DuckDB.",
+          "publisher": {
+            "@id": "https://treeline.money/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://treeline.money/#organization",
+          "name": "Treeline",
+          "url": "https://treeline.money",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://treeline.money/og-image.png"
+          },
+          "sameAs": [
+            "https://github.com/treeline-money",
+            "https://discord.gg/EcNvBnSft5"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://treeline.money/#software",
+          "name": "Treeline",
+          "description": "A local-first, plugin-based personal finance app built on DuckDB. Track your finances with full data ownership, extend with plugins, and query your data with SQL.",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "macOS, Windows, Linux",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "downloadUrl": "https://treeline.money/download",
+          "screenshot": "https://treeline.money/screenshots/accounts-light.png",
+          "softwareVersion": "beta",
+          "author": {
+            "@id": "https://treeline.money/#organization"
+          }
+        }
+      ]
+    })} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
