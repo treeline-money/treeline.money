@@ -1,42 +1,37 @@
+// Plugin registry URL - fetched at build time
+const PLUGINS_REGISTRY_URL = "https://raw.githubusercontent.com/treeline-money/treeline-releases/main/plugins.json";
+
 export interface Plugin {
   id: string;
   name: string;
   description: string;
+  author: string;
   repo: string;
+  featured: boolean;
 }
 
-export const plugins: Plugin[] = [
-  {
-    id: "budget",
-    name: "Budget",
-    description: "Track spending against tag-based categories with monthly rollovers.",
-    repo: "https://github.com/treeline-money/plugin-budget"
-  },
-  {
-    id: "emergency-fund",
-    name: "Emergency Fund",
-    description: "See how long your emergency fund would last based on your actual spending patterns.",
-    repo: "https://github.com/treeline-money/plugin-emergency-fund"
-  },
-  {
-    id: "goals",
-    name: "Savings Goals",
-    description: "Set savings targets and track your progress toward each goal.",
-    repo: "https://github.com/treeline-money/plugin-goals"
-  },
-  {
-    id: "subscriptions",
-    name: "Subscriptions",
-    description: "Automatically detects recurring charges from your transaction history.",
-    repo: "https://github.com/treeline-money/plugin-subscriptions"
-  },
-  {
-    id: "cashflow",
-    name: "Cash Flow",
-    description: "Plan ahead by scheduling expected income and expenses.",
-    repo: "https://github.com/treeline-money/plugin-cashflow"
+interface PluginRegistry {
+  description: string;
+  plugins: Plugin[];
+}
+
+// Fetch plugins from registry at build time
+let _plugins: Plugin[] = [];
+let _featuredPlugins: Plugin[] = [];
+
+try {
+  const response = await fetch(PLUGINS_REGISTRY_URL);
+  if (response.ok) {
+    const data: PluginRegistry = await response.json();
+    _plugins = data.plugins || [];
+    _featuredPlugins = _plugins.filter(p => p.featured);
   }
-];
+} catch (e) {
+  console.error("Failed to fetch plugin registry:", e);
+}
+
+export const plugins: Plugin[] = _plugins;
+export const featuredPlugins: Plugin[] = _featuredPlugins;
 
 export function getPlugin(id: string): Plugin | undefined {
   return plugins.find(p => p.id === id);
