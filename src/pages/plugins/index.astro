@@ -17,13 +17,26 @@ import { plugins } from "../../data/plugins";
     <!-- Plugin Grid -->
     <div class="plugins-grid">
       {plugins.map(plugin => (
-        <a href={`/plugins/${plugin.id}`} class="plugin-card">
-          <h2 class="plugin-card-title">{plugin.name}</h2>
-          <p class="plugin-card-description">{plugin.description}</p>
-          <p class:list={["plugin-card-author", { official: plugin.author === "Treeline" }]}>
-            by {plugin.author}
-          </p>
-        </a>
+        plugin.status === 'coming-soon' ? (
+          <div class="plugin-card coming-soon">
+            <div class="plugin-card-header">
+              <h2 class="plugin-card-title">{plugin.name}</h2>
+              <span class="coming-soon-badge">Coming Soon</span>
+            </div>
+            <p class="plugin-card-description">{plugin.description}</p>
+            <p class:list={["plugin-card-author", { official: plugin.author === "Treeline" }]}>
+              by {plugin.author}
+            </p>
+          </div>
+        ) : (
+          <a href={`/plugins/${plugin.id}`} class="plugin-card">
+            <h2 class="plugin-card-title">{plugin.name}</h2>
+            <p class="plugin-card-description">{plugin.description}</p>
+            <p class:list={["plugin-card-author", { official: plugin.author === "Treeline" }]}>
+              by {plugin.author}
+            </p>
+          </a>
+        )
       ))}
     </div>
 
@@ -102,5 +115,42 @@ import { plugins } from "../../data/plugins";
 
   .cta-link:hover {
     text-decoration: underline;
+  }
+
+  .plugin-card.coming-soon {
+    border-style: dashed;
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .plugin-card.coming-soon:hover {
+    border-color: var(--color-border);
+    box-shadow: none;
+  }
+
+  .plugin-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .plugin-card-header .plugin-card-title {
+    margin-bottom: 0;
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 </style>

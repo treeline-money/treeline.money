@@ -179,10 +179,20 @@ import { plugins } from "../data/plugins";
       <!-- Plugin Grid -->
       <div class="plugins-grid">
         {plugins.map(plugin => (
-          <a href={`/plugins/${plugin.id}`} class="plugin-card">
-            <h3 class="plugin-card-title">{plugin.name}</h3>
-            <p class="plugin-card-description">{plugin.description}</p>
-          </a>
+          plugin.status === 'coming-soon' ? (
+            <div class="plugin-card coming-soon">
+              <div class="plugin-card-header">
+                <h3 class="plugin-card-title">{plugin.name}</h3>
+                <span class="coming-soon-badge">Soon</span>
+              </div>
+              <p class="plugin-card-description">{plugin.description}</p>
+            </div>
+          ) : (
+            <a href={`/plugins/${plugin.id}`} class="plugin-card">
+              <h3 class="plugin-card-title">{plugin.name}</h3>
+              <p class="plugin-card-description">{plugin.description}</p>
+            </a>
+          )
         ))}
       </div>
 
@@ -666,6 +676,42 @@ import { plugins } from "../data/plugins";
     font-size: 0.875rem;
     color: var(--color-text-muted);
     line-height: 1.5;
+  }
+
+  .plugin-card.coming-soon {
+    border-style: dashed;
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .plugin-card.coming-soon:hover {
+    border-color: var(--color-border);
+    box-shadow: none;
+  }
+
+  .plugin-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .plugin-card-header .plugin-card-title {
+    margin-bottom: 0;
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    padding: 0.125rem 0.375rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
 </style>
 

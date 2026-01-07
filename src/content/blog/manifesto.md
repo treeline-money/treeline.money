@@ -1,6 +1,6 @@
 ---
 title: "Why I built Treeline"
-date: 2025-12-24T12:00:00
+date: 2026-01-07T12:00:00
 description: "Why your financial data should outlive any app"
 ---
 

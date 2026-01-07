@@ -8,6 +8,7 @@ export interface Plugin {
   author: string;
   repo: string;
   featured: boolean;
+  status?: 'available' | 'coming-soon';
 }
 
 interface PluginRegistry {
@@ -30,7 +31,32 @@ try {
   console.error("Failed to fetch plugin registry:", e);
 }
 
-export const plugins: Plugin[] = _plugins;
+// Coming soon plugins (hardcoded until they have repos)
+const comingSoonPlugins: Plugin[] = [
+  {
+    id: 'net-worth',
+    name: 'Net Worth Tracker',
+    description: 'Track your total net worth over time. See how your assets and liabilities change month to month.',
+    author: 'Treeline',
+    repo: '',
+    featured: false,
+    status: 'coming-soon',
+  },
+  {
+    id: 'fire-calculator',
+    name: 'FIRE Calculator',
+    description: 'Calculate your path to financial independence based on your actual spending and savings rate.',
+    author: 'Treeline',
+    repo: '',
+    featured: false,
+    status: 'coming-soon',
+  },
+];
+
+// Mark fetched plugins as available
+const availablePlugins = _plugins.map(p => ({ ...p, status: 'available' as const }));
+
+export const plugins: Plugin[] = [...availablePlugins, ...comingSoonPlugins];
 export const featuredPlugins: Plugin[] = _featuredPlugins;
 
 export function getPlugin(id: string): Plugin | undefined {
