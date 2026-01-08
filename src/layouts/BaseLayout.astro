@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -195,6 +197,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
         </div>
       </div>
     </footer>
+    <Analytics />
   </body>
 </html>
 
