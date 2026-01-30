@@ -1,0 +1,225 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Integrations - Treeline" description="Connect Treeline to your banks and tools.">
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-3xl font-semibold mb-4">Integrations</h1>
+      <p class="text-lg text-[var(--color-text-muted)] max-w-2xl">
+        Connect Treeline to your banks and favorite tools.
+      </p>
+    </header>
+
+    <!-- Bank Sync Section -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-2">Bank Sync</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        Automatically import transactions from your bank accounts. These are third-party services—you pay them directly.
+      </p>
+
+      <div class="integrations-grid mb-4">
+        <!-- SimpleFIN -->
+        <div class="integration-card">
+          <div class="integration-header">
+            <h3 class="integration-title">SimpleFIN</h3>
+            <span class="integration-price">~$1.50/month</span>
+          </div>
+          <p class="integration-description">
+            Open protocol for bank sync. Supports most US and Canadian banks.
+          </p>
+          <div class="integration-meta">
+            <span class="integration-region">US & Canada</span>
+          </div>
+          <a
+            href="https://beta-bridge.simplefin.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="integration-link"
+          >
+            Get SimpleFIN
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Lunch Flow -->
+        <div class="integration-card">
+          <div class="integration-header">
+            <h3 class="integration-title">Lunch Flow</h3>
+            <span class="integration-price">from ~$3/month</span>
+          </div>
+          <p class="integration-description">
+            Global bank sync supporting thousands of banks via open banking APIs.
+          </p>
+          <div class="integration-meta">
+            <span class="integration-region">US, Canada, EU, UK, Brazil, Asia</span>
+          </div>
+          <a
+            href="https://www.lunchflow.app/?via=treeline"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="integration-link"
+          >
+            Get Lunch Flow
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Don't want to pay for bank sync? Treeline also supports <strong>manual CSV import</strong> from any bank—just export your transactions and import them directly.
+      </p>
+    </section>
+
+    <!-- Divider -->
+    <hr class="border-t border-[var(--color-border)] mb-12" />
+
+    <!-- Tools Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Tools</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        Extend Treeline with additional tools and interfaces.
+      </p>
+
+      <div class="integrations-grid">
+        <!-- Moltbot -->
+        <div class="integration-card">
+          <div class="integration-header">
+            <h3 class="integration-title">Moltbot</h3>
+            <span class="integration-price">Free</span>
+          </div>
+          <p class="integration-description">
+            Chat with your finances via Discord, WhatsApp, or Telegram. Ask "What's my net worth?" and get instant answers.
+          </p>
+          <div class="integration-meta">
+            <span class="integration-region">Requires <a href="/download#cli" class="cli-requirement-link">Treeline CLI</a></span>
+          </div>
+          <div class="integration-links">
+            <a
+              href="https://clawdhub.com/zack-schrag/treeline-money"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="integration-link"
+            >
+              Get the Treeline skill
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+            <a
+              href="https://molt.bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="integration-link-secondary"
+            >
+              Learn about Moltbot
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .integration-card {
+    padding: 1.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .integration-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+  }
+
+  .integration-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .integration-price {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .integration-description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    flex-grow: 1;
+  }
+
+  .integration-meta {
+    margin-bottom: 1rem;
+  }
+
+  .integration-region {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg-tertiary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .cli-requirement-link {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cli-requirement-link:hover {
+    opacity: 0.8;
+  }
+
+  .integration-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .integration-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    transition: opacity 0.15s ease;
+  }
+
+  .integration-link:hover {
+    opacity: 0.8;
+  }
+
+  .integration-link-secondary {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    transition: color 0.15s ease;
+  }
+
+  .integration-link-secondary:hover {
+    color: var(--color-text);
+  }
+
+</style>
+
