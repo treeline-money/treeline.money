@@ -1,5 +1,5 @@
 // Plugin registry URL - fetched at build time
-const PLUGINS_REGISTRY_URL = "https://raw.githubusercontent.com/treeline-money/treeline-releases/main/plugins.json";
+const PLUGINS_REGISTRY_URL = "https://raw.githubusercontent.com/treeline-money/treeline/main/plugins.json";
 
 export interface Plugin {
   id: string;
