@@ -111,8 +111,8 @@ const releasesPage = `https://github.com/treeline-money/treeline-releases/releas
             <span class="text-sm font-medium">macOS / Linux</span>
           </div>
           <div class="relative">
-            <code class="cli-command block bg-[var(--color-bg)] p-3 rounded text-sm font-mono overflow-x-auto">curl -fsSL https://raw.githubusercontent.com/treeline-money/treeline/main/scripts/install.sh | sh</code>
-            <button class="copy-btn" data-command="curl -fsSL https://raw.githubusercontent.com/treeline-money/treeline/main/scripts/install.sh | sh" aria-label="Copy to clipboard">
+            <code class="cli-command block bg-[var(--color-bg)] p-3 rounded text-sm font-mono overflow-x-auto">curl -fsSL https://treeline.money/install.sh | sh</code>
+            <button class="copy-btn" data-command="curl -fsSL https://treeline.money/install.sh | sh" aria-label="Copy to clipboard">
               <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -130,8 +130,8 @@ const releasesPage = `https://github.com/treeline-money/treeline-releases/releas
             <span class="text-sm font-medium">Windows (PowerShell)</span>
           </div>
           <div class="relative">
-            <code class="cli-command block bg-[var(--color-bg)] p-3 rounded text-sm font-mono overflow-x-auto">irm https://raw.githubusercontent.com/treeline-money/treeline/main/scripts/install.ps1 | iex</code>
-            <button class="copy-btn" data-command="irm https://raw.githubusercontent.com/treeline-money/treeline/main/scripts/install.ps1 | iex" aria-label="Copy to clipboard">
+            <code class="cli-command block bg-[var(--color-bg)] p-3 rounded text-sm font-mono overflow-x-auto">irm https://treeline.money/install.ps1 | iex</code>
+            <button class="copy-btn" data-command="irm https://treeline.money/install.ps1 | iex" aria-label="Copy to clipboard">
               <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -145,7 +145,7 @@ const releasesPage = `https://github.com/treeline-money/treeline-releases/releas
       </div>
 
       <p class="text-sm text-[var(--color-text-muted)] mt-4">
-        Installs to <code class="bg-[var(--color-bg)] px-1 rounded">/usr/local/bin/tl</code> (macOS/Linux) or <code class="bg-[var(--color-bg)] px-1 rounded">~/.treeline/bin/tl</code> (Windows). Run <code class="bg-[var(--color-bg)] px-1 rounded">tl --help</code> to get started.
+        Installs to <code class="bg-[var(--color-bg)] px-1 rounded">~/.treeline/bin/tl</code> and adds to your PATH. Run <code class="bg-[var(--color-bg)] px-1 rounded">tl --help</code> to get started.
       </p>
     </div>
 
