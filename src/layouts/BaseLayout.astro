@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "A local-first, plugin-based finance app. Built on DuckDB." } = Astro.props;
+const { title, description = "Free, open source personal finance app. Your data stays on your machine — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL." } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
 ---
 
@@ -40,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
           "@id": "https://treeline.money/#website",
           "url": "https://treeline.money",
           "name": "Treeline",
-          "description": "A local-first, plugin-based finance app. Built on DuckDB.",
+          "description": "Free, open source personal finance app. Your data stays on your machine — no cloud, no subscriptions.",
           "publisher": {
             "@id": "https://treeline.money/#organization"
           }
@@ -63,7 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
           "@type": "SoftwareApplication",
           "@id": "https://treeline.money/#software",
           "name": "Treeline",
-          "description": "A local-first, plugin-based personal finance app built on DuckDB. Track your finances with full data ownership, extend with plugins, and query your data with SQL.",
+          "description": "Free, open source personal finance app. Your data stays on your machine — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL.",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "macOS, Windows, Linux",
           "offers": {
