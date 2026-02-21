@@ -42,10 +42,8 @@ detect_platform() {
                     ARTIFACT="tl-macos-arm64"
                     ;;
                 x86_64)
-                    # Intel Mac - check if we have a binary for it
-                    echo -e "${YELLOW}Note: Intel Mac support is limited. Trying arm64 binary with Rosetta...${NC}"
                     PLATFORM="macos"
-                    ARTIFACT="tl-macos-arm64"
+                    ARTIFACT="tl-macos-x64"
                     ;;
                 *)
                     echo -e "${RED}Error: Unsupported architecture: $ARCH${NC}"

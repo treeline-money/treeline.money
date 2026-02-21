@@ -42,8 +42,8 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
     <div>
       <h2 class="text-lg font-medium mb-4" id="all-platforms-label">All platforms</h2>
       <div class="space-y-4">
-        <!-- macOS -->
-        <a href={`${baseUrl}/Treeline_${VERSION}_aarch64.dmg`} class="download-option" data-os="mac">
+        <!-- macOS Apple Silicon -->
+        <a href={`${baseUrl}/Treeline_${VERSION}_aarch64.dmg`} class="download-option" data-os="mac-arm">
           <div class="download-option-icon">
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
@@ -51,7 +51,21 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
           </div>
           <div class="download-option-info">
             <span class="download-option-label">macOS</span>
-            <span class="download-option-note">Apple Silicon (M1/M2/M3)</span>
+            <span class="download-option-note">Apple Silicon (M1/M2/M3/M4)</span>
+          </div>
+          <span class="download-option-file">.dmg</span>
+        </a>
+
+        <!-- macOS Intel -->
+        <a href={`${baseUrl}/Treeline_${VERSION}_x64.dmg`} class="download-option" data-os="mac-intel">
+          <div class="download-option-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+          </div>
+          <div class="download-option-info">
+            <span class="download-option-label">macOS</span>
+            <span class="download-option-note">Intel</span>
           </div>
           <span class="download-option-file">.dmg</span>
         </a>
@@ -91,7 +105,7 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
     <div class="mt-12 p-6 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)]">
       <h3 class="font-medium mb-3">Installation notes</h3>
       <div class="text-sm text-[var(--color-text-muted)] space-y-2">
-        <p><strong>macOS:</strong> Open the .dmg, drag Treeline to Applications. On first run, right-click and select "Open" to bypass Gatekeeper.</p>
+        <p><strong>macOS:</strong> Choose Apple Silicon or Intel depending on your Mac. Open the .dmg, drag Treeline to Applications. On first run, right-click and select "Open" to bypass Gatekeeper.</p>
         <p><strong>Windows:</strong> Run the installer. Windows SmartScreen may warn about an unrecognized app—click "More info" then "Run anyway".</p>
         <p><strong>Linux:</strong> Make the AppImage executable (<code class="bg-[var(--color-bg)] px-1 rounded">chmod +x</code>) and run it.</p>
       </div>
@@ -397,7 +411,7 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
 
 <script>
   // Detect OS (skip on mobile)
-  function detectOS(): 'mac' | 'windows' | 'linux' | null {
+  function detectOS(): 'mac-arm' | 'mac-intel' | 'windows' | 'linux' | null {
     const ua = navigator.userAgent.toLowerCase();
     const platform = navigator.platform.toLowerCase();
 
@@ -405,13 +419,21 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
     const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua);
     if (isMobile) return null;
 
-    if (platform.includes('mac') || ua.includes('mac')) return 'mac';
+    if (platform.includes('mac') || ua.includes('mac')) {
+      // Check for Apple Silicon vs Intel
+      // navigator.platform is "MacIntel" for both (even on ARM via Rosetta),
+      // but we can use GPU renderer or userAgentData if available
+      const nav = navigator as any;
+      if (nav.userAgentData?.architecture === 'arm') return 'mac-arm';
+      // Default to Apple Silicon since most Macs sold since 2020 are ARM
+      return 'mac-arm';
+    }
     if (platform.includes('win') || ua.includes('win')) return 'windows';
     if (platform.includes('linux') || ua.includes('linux')) return 'linux';
     return null;
   }
 
-  function highlightDetectedOS(os: 'mac' | 'windows' | 'linux') {
+  function highlightDetectedOS(os: 'mac-arm' | 'mac-intel' | 'windows' | 'linux') {
     const detectedSection = document.getElementById('detected-download');
     const detectedLabel = document.getElementById('detected-os-label');
     const detectedLink = document.getElementById('detected-download-link') as HTMLAnchorElement;
