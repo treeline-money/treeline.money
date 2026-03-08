@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Agents - Treeline" description="Use AI agents with your Treeline data.">
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <!-- Header -->
+    <header class="mb-12">
+      <h1 class="text-3xl font-semibold mb-4">Agents</h1>
+      <p class="text-lg text-[var(--color-text-muted)] max-w-2xl">
+        Your data lives on your machine, so AI agents get direct access. No API keys, no rate limits, no latency.
+      </p>
+    </header>
+
+    <!-- Available -->
+    <section class="mb-12">
+      <h2 class="text-xl font-semibold mb-2">Available now</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        Connect your AI agent to Treeline today.
+      </p>
+
+      <div class="agents-grid">
+        <!-- OpenClaw -->
+        <div class="agent-card">
+          <div class="agent-header">
+            <h3 class="agent-title">OpenClaw</h3>
+            <span class="agent-price">Free</span>
+          </div>
+          <p class="agent-description">
+            Chat with your finances via Discord, WhatsApp, or Telegram. Ask "What's my net worth?" and get instant answers.
+          </p>
+          <div class="agent-meta">
+            <span class="agent-tag">Requires <a href="/download#cli" class="cli-requirement-link">Treeline CLI</a></span>
+          </div>
+          <div class="agent-links">
+            <a
+              href="https://clawdhub.com/zack-schrag/treeline-money"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="agent-link"
+            >
+              Get the Treeline skill
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+            <a
+              href="https://openclaw.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="agent-link-secondary"
+            >
+              Learn about OpenClaw
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <hr class="border-t border-[var(--color-border)] mb-12" />
+
+    <!-- Coming Soon -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">Coming soon</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        More ways to connect AI agents to your financial data.
+      </p>
+
+      <div class="agents-grid">
+        <!-- MCP -->
+        <div class="agent-card coming-soon">
+          <div class="agent-header">
+            <h3 class="agent-title">MCP</h3>
+            <span class="coming-soon-badge">Soon</span>
+          </div>
+          <p class="agent-description">
+            Model Context Protocol server for Treeline. Works with any MCP-compatible client.
+          </p>
+        </div>
+
+        <!-- Claude Code -->
+        <div class="agent-card coming-soon">
+          <div class="agent-header">
+            <h3 class="agent-title">Claude Code</h3>
+            <span class="coming-soon-badge">Soon</span>
+          </div>
+          <p class="agent-description">
+            Query and manage your finances directly from Claude Code via a plugin or skill.
+          </p>
+        </div>
+
+        <!-- ChatGPT -->
+        <div class="agent-card coming-soon">
+          <div class="agent-header">
+            <h3 class="agent-title">ChatGPT</h3>
+            <span class="coming-soon-badge">Soon</span>
+          </div>
+          <p class="agent-description">
+            Connect your Treeline data to ChatGPT for conversational finance queries.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .agent-card {
+    padding: 1.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .agent-card.coming-soon {
+    border-style: dashed;
+    opacity: 0.7;
+  }
+
+  .agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+  }
+
+  .agent-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .agent-price {
+    font-size: 0.875rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .agent-description {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    flex-grow: 1;
+  }
+
+  .agent-meta {
+    margin-bottom: 1rem;
+  }
+
+  .agent-tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    background: var(--color-bg-tertiary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .cli-requirement-link {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .cli-requirement-link:hover {
+    opacity: 0.8;
+  }
+
+  .agent-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .agent-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    transition: opacity 0.15s ease;
+  }
+
+  .agent-link:hover {
+    opacity: 0.8;
+  }
+
+  .agent-link-secondary {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    transition: color 0.15s ease;
+  }
+
+  .agent-link-secondary:hover {
+    color: var(--color-text);
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    padding: 0.125rem 0.375rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    font-size: 0.625rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+</style>

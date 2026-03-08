@@ -2,23 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Integrations - Treeline" description="Connect Treeline to your banks and tools.">
+<BaseLayout title="Bank Sync - Treeline" description="Connect Treeline to your bank accounts.">
   <div class="max-w-3xl mx-auto px-6 py-12">
     <!-- Header -->
     <header class="mb-12">
-      <h1 class="text-3xl font-semibold mb-4">Integrations</h1>
+      <h1 class="text-3xl font-semibold mb-4">Bank Sync</h1>
       <p class="text-lg text-[var(--color-text-muted)] max-w-2xl">
-        Connect Treeline to your banks and favorite tools.
+        Automatically import transactions from your bank accounts. These are third-party services—you pay them directly.
       </p>
     </header>
 
-    <!-- Bank Sync Section -->
-    <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-2">Bank Sync</h2>
-      <p class="text-[var(--color-text-muted)] mb-6">
-        Automatically import transactions from your bank accounts. These are third-party services—you pay them directly.
-      </p>
-
+    <!-- Bank Sync Cards -->
+    <section class="mb-8">
       <div class="integrations-grid mb-4">
         <!-- SimpleFIN -->
         <div class="integration-card">
@@ -74,54 +69,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <p class="text-sm text-[var(--color-text-muted)]">
         Don't want to pay for bank sync? Treeline also supports <strong>manual CSV import</strong> from any bank—just export your transactions and import them directly.
       </p>
-    </section>
-
-    <!-- Divider -->
-    <hr class="border-t border-[var(--color-border)] mb-12" />
-
-    <!-- Tools Section -->
-    <section>
-      <h2 class="text-xl font-semibold mb-2">Tools</h2>
-      <p class="text-[var(--color-text-muted)] mb-6">
-        Extend Treeline with additional tools and interfaces.
-      </p>
-
-      <div class="integrations-grid">
-        <!-- OpenClaw -->
-        <div class="integration-card">
-          <div class="integration-header">
-            <h3 class="integration-title">OpenClaw</h3>
-            <span class="integration-price">Free</span>
-          </div>
-          <p class="integration-description">
-            Chat with your finances via Discord, WhatsApp, or Telegram. Ask "What's my net worth?" and get instant answers.
-          </p>
-          <div class="integration-meta">
-            <span class="integration-region">Requires <a href="/download#cli" class="cli-requirement-link">Treeline CLI</a></span>
-          </div>
-          <div class="integration-links">
-            <a
-              href="https://clawdhub.com/zack-schrag/treeline-money"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="integration-link"
-            >
-              Get the Treeline skill
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-            <a
-              href="https://openclaw.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="integration-link-secondary"
-            >
-              Learn about OpenClaw
-            </a>
-          </div>
-        </div>
-      </div>
     </section>
   </div>
 </BaseLayout>
@@ -181,22 +128,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border-radius: 4px;
   }
 
-  .cli-requirement-link {
-    color: var(--color-accent);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-
-  .cli-requirement-link:hover {
-    opacity: 0.8;
-  }
-
-  .integration-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .integration-link {
     display: inline-flex;
     align-items: center;
@@ -210,16 +141,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .integration-link:hover {
     opacity: 0.8;
   }
-
-  .integration-link-secondary {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    transition: color 0.15s ease;
-  }
-
-  .integration-link-secondary:hover {
-    color: var(--color-text);
-  }
-
 </style>
-
