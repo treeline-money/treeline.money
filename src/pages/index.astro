@@ -105,62 +105,22 @@ import { plugins } from "../data/plugins";
     </div>
   </section>
 
-  <!-- Agent deep dive -->
+  <!-- The app -->
   <section class="border-t border-[var(--color-border)]">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <!-- Terminal example -->
-      <div class="agent-terminal">
-        <div class="terminal-header">
-          <div class="terminal-dots">
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-          </div>
-        </div>
-        <div class="terminal-body">
-          <div class="terminal-line terminal-prompt">How much did I spend on groceries last month?</div>
-          <div class="terminal-line terminal-command">tl query "SELECT SUM(-amount) as total FROM transactions WHERE tags LIKE '%groceries%' AND transaction_date >= '2026-02-01'" --json</div>
-          <div class="terminal-line terminal-output">{'{"total": 847.23}'}</div>
-          <div class="terminal-line terminal-response">$847.23 — up 12% from January. Your budget was $800. Want me to look at what's driving the increase?</div>
-        </div>
-      </div>
-
-      <!-- Agent feature points -->
-      <ul class="agent-features">
-        <li>
-          <strong>Full SQL access via CLI</strong>
-          <span class="text-[var(--color-text-muted)]"> — query anything with <code>tl query</code></span>
-        </li>
-        <li>
-          <strong>Structured JSON output</strong>
-          <span class="text-[var(--color-text-muted)]"> — every query returns machine-readable data with <code>--json</code></span>
-        </li>
-        <li>
-          <strong>Works with any AI agent</strong>
-          <span class="text-[var(--color-text-muted)]"> — <a href="/agents" class="text-[var(--color-accent)]">connect Claude, ChatGPT, or any MCP-compatible client</a></span>
-        </li>
-        <li>
-          <strong>Zero-latency local access</strong>
-          <span class="text-[var(--color-text-muted)]"> — your agent reads a local DuckDB file, not a remote API</span>
-        </li>
-      </ul>
+    <div class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+      <button class="screenshot-btn" data-light="/screenshots/accounts-light.png" data-dark="/screenshots/accounts-dark.png" aria-label="View screenshot full size">
+        <ThemedImage
+          light="/screenshots/accounts-light.png"
+          dark="/screenshots/accounts-dark.png"
+          alt="Treeline accounts view showing account balances"
+          class="rounded-lg border border-[var(--color-border)] shadow-lg"
+        />
+        <span class="screenshot-hint">Tap to expand</span>
+      </button>
     </div>
   </section>
 
-  <!-- Screenshots: Accounts -->
-  <section class="max-w-5xl mx-auto px-6 pb-16">
-    <button class="screenshot-btn" data-light="/screenshots/accounts-light.png" data-dark="/screenshots/accounts-dark.png" aria-label="View screenshot full size">
-      <ThemedImage
-        light="/screenshots/accounts-light.png"
-        dark="/screenshots/accounts-dark.png"
-        alt="Treeline accounts view showing account balances"
-        class="rounded-lg border border-[var(--color-border)] shadow-lg"
-      />
-      <span class="screenshot-hint">Tap to expand</span>
-    </button>
-  </section>
-
-  <!-- Screenshots: Transactions -->
+  <!-- Transactions -->
   <section class="max-w-5xl mx-auto px-6 pb-20">
     <h2 class="text-xl font-semibold mb-4 text-center">Smart transaction management</h2>
     <p class="text-[var(--color-text-muted)] text-center mb-8 max-w-2xl mx-auto">
@@ -205,21 +165,73 @@ import { plugins } from "../data/plugins";
     </div>
   </section>
 
-  <!-- What you get - Simple list -->
+  <!-- What you get -->
   <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
     <div class="max-w-3xl mx-auto px-6 py-20">
       <h2 class="text-xl font-semibold mb-8">What you get</h2>
 
       <ul class="space-y-4 text-[var(--color-text-muted)]">
-        <li>A desktop app for Mac, Windows, and Linux</li>
         <li><a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Open source</a> code you can inspect and audit</li>
         <li>Your data in a local DuckDB database — we never see it</li>
         <li>Bank sync via <a href="https://beta-bridge.simplefin.org/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">SimpleFIN</a> or <a href="https://www.lunchflow.app/?atp=treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Lunch Flow</a>, or CSV import</li>
-        <li>Quick tagging with customizable rules</li>
         <li>A plugin system for extending functionality</li>
         <li>Optional database encryption</li>
         <li>No account required, no subscription</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- How your agent works -->
+  <section class="border-t border-[var(--color-border)]" id="how-agent-works">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-4">How your agent works</h2>
+      <p class="text-[var(--color-text-muted)] mb-8">
+        Your agent talks to Treeline through the CLI. It runs queries, syncs accounts,
+        tags transactions, and manages budgets — all locally, all instantly.
+      </p>
+
+      <!-- Terminal example -->
+      <div class="agent-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line terminal-prompt">How much did I spend on groceries last month?</div>
+          <div class="terminal-line terminal-command">tl query "SELECT SUM(-amount) as total FROM transactions WHERE tags LIKE '%groceries%' AND transaction_date >= '2026-02-01'" --json</div>
+          <div class="terminal-line terminal-output">{'{"total": 847.23}'}</div>
+          <div class="terminal-line terminal-response">$847.23 — up 12% from January. Your budget was $800. Want me to look at what's driving the increase?</div>
+        </div>
+      </div>
+
+      <!-- Agent feature points -->
+      <ul class="agent-features">
+        <li>
+          <strong>Full SQL access via CLI</strong>
+          <span class="text-[var(--color-text-muted)]"> — query anything with <code>tl query</code></span>
+        </li>
+        <li>
+          <strong>Structured JSON output</strong>
+          <span class="text-[var(--color-text-muted)]"> — every query returns machine-readable data with <code>--json</code></span>
+        </li>
+        <li>
+          <strong>Works with any AI agent</strong>
+          <span class="text-[var(--color-text-muted)]"> — <a href="/agents" class="text-[var(--color-accent)]">connect Claude, ChatGPT, or any MCP-compatible client</a></span>
+        </li>
+        <li>
+          <strong>Zero-latency local access</strong>
+          <span class="text-[var(--color-text-muted)]"> — your agent reads a local DuckDB file, not a remote API</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 text-sm">
+        <a href="/agents" class="text-[var(--color-accent)] font-medium">
+          View available agents →
+        </a>
+      </div>
     </div>
   </section>
 
