@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Free, open source personal finance app. Your data stays on your machine — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL." } = Astro.props;
+const { title, description = "Free, open source personal finance app. We never see your data — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL." } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
 ---
 
@@ -40,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
           "@id": "https://treeline.money/#website",
           "url": "https://treeline.money",
           "name": "Treeline",
-          "description": "Free, open source personal finance app. Your data stays on your machine — no cloud, no subscriptions.",
+          "description": "Free, open source personal finance app. We never see your data — no cloud, no subscriptions.",
           "publisher": {
             "@id": "https://treeline.money/#organization"
           }
@@ -63,7 +63,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
           "@type": "SoftwareApplication",
           "@id": "https://treeline.money/#software",
           "name": "Treeline",
-          "description": "Free, open source personal finance app. Your data stays on your machine — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL.",
+          "description": "Free, open source personal finance app. We never see your data — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL.",
           "applicationCategory": "FinanceApplication",
           "operatingSystem": "macOS, Windows, Linux",
           "offers": {
@@ -116,8 +116,9 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
 
         <!-- Desktop navigation -->
         <div class="hidden md:flex items-center gap-6 text-sm">
+          <a href="/agents" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Agents</a>
           <a href="/plugins" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Plugins</a>
-          <a href="/integrations" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Integrations</a>
+          <a href="/integrations" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Bank Sync</a>
           <a href="/pricing" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Pricing</a>
           <a href="/blog" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Blog</a>
           <a href="https://docs.treeline.money" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Docs</a>
@@ -170,8 +171,9 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
       <!-- Mobile menu dropdown -->
       <div id="mobile-menu" class="mobile-menu md:hidden">
         <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-4">
+          <a href="/agents" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Agents</a>
           <a href="/plugins" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Plugins</a>
-          <a href="/integrations" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Integrations</a>
+          <a href="/integrations" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Bank Sync</a>
           <a href="/pricing" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Pricing</a>
           <a href="/blog" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Blog</a>
           <a href="https://docs.treeline.money" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-2">Docs</a>

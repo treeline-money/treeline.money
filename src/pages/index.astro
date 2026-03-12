@@ -23,13 +23,13 @@ import { plugins } from "../data/plugins";
       <h1 class="text-4xl sm:text-5xl font-semibold">treeline</h1>
     </div>
     <p class="tagline text-2xl sm:text-3xl text-[var(--color-text)] font-medium mb-4">
-      Personal finance should be personal.
+      Personal finance you can build on.
     </p>
-    <p class="text-lg text-[var(--color-text-muted)] mb-8">
-      An open source, local-first finance app. Built on DuckDB.
+    <p class="text-lg text-[var(--color-text-muted)] mb-6">
+      An open source finance app and local DuckDB database. For you and your AI agent.
     </p>
 
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-wrap items-center gap-4 mb-4">
       <a
         href="/download"
         class="px-5 py-2.5 bg-[var(--color-accent)] text-white font-medium rounded-md hover:bg-[var(--color-accent-muted)] transition-colors"
@@ -45,6 +45,8 @@ import { plugins } from "../data/plugins";
         Join Discord
       </a>
     </div>
+
+    <a href="/blog/manifesto" class="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)]">Why I built this →</a>
 
     <!-- Scroll indicator - fades out once user scrolls -->
     <div class="scroll-indicator" id="scroll-indicator">
@@ -67,44 +69,58 @@ import { plugins } from "../data/plugins";
     }, { passive: true });
   </script>
 
-  <!-- Manifesto - The focal point -->
-  <section class="max-w-3xl mx-auto px-6 pb-20">
-    <div class="prose text-lg leading-relaxed space-y-6 text-[var(--color-text-muted)]">
-      <p>
-        I tried a few different finance apps and, while they brought convenience, they
-        all lacked <em>something</em>—because the way I wanted to view my money didn't
-        match The App's opinion of how I was <em>supposed</em> to view my money.
-      </p>
+  <!-- For your agent / For you — side by side -->
+  <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]" id="ai-agents">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <div class="two-col">
+        <!-- For your agent -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">For your agent</h2>
+          <p class="text-[var(--color-text-muted)] mb-6">
+            We never see your data — it lives on your machine, which means your AI agent gets direct, unrestricted,
+            instant access to it. No API keys, no rate limits, no latency.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+            <a href="/agents" class="text-[var(--color-accent)] font-medium">
+              View agents →
+            </a>
+            <a href="https://docs.treeline.money" class="text-[var(--color-accent)] font-medium">
+              Read the docs →
+            </a>
+          </div>
+        </div>
 
-      <p>
-        I want to tinker. I want to ask questions of my data that no product manager
-        anticipated. I want my tools to grow with me as my needs change.
-      </p>
-
-      <p>
-        So I built Treeline.
-      </p>
-
-      <div class="pt-2">
-        <a href="/blog/manifesto" class="text-[var(--color-text)]">Keep reading →</a>
+        <!-- For you -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">For you</h2>
+          <p class="text-[var(--color-text-muted)] mb-6">
+            A desktop app for Mac, Windows, and Linux. Connect your bank, tag transactions, track budgets,
+            and see everything in an interface you control.
+          </p>
+          <a href="/download" class="text-[var(--color-accent)] font-medium text-sm">
+            Download →
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Screenshots: Accounts -->
-  <section class="max-w-5xl mx-auto px-6 pb-16">
-    <button class="screenshot-btn" data-light="/screenshots/accounts-light.png" data-dark="/screenshots/accounts-dark.png" aria-label="View screenshot full size">
-      <ThemedImage
-        light="/screenshots/accounts-light.png"
-        dark="/screenshots/accounts-dark.png"
-        alt="Treeline accounts view showing account balances"
-        class="rounded-lg border border-[var(--color-border)] shadow-lg"
-      />
-      <span class="screenshot-hint">Tap to expand</span>
-    </button>
+  <!-- The app -->
+  <section class="border-t border-[var(--color-border)]">
+    <div class="max-w-5xl mx-auto px-6 pt-20 pb-16">
+      <button class="screenshot-btn" data-light="/screenshots/accounts-light.png" data-dark="/screenshots/accounts-dark.png" aria-label="View screenshot full size">
+        <ThemedImage
+          light="/screenshots/accounts-light.png"
+          dark="/screenshots/accounts-dark.png"
+          alt="Treeline accounts view showing account balances"
+          class="rounded-lg border border-[var(--color-border)] shadow-lg"
+        />
+        <span class="screenshot-hint">Tap to expand</span>
+      </button>
+    </div>
   </section>
 
-  <!-- Screenshots: Transactions -->
+  <!-- Transactions -->
   <section class="max-w-5xl mx-auto px-6 pb-20">
     <h2 class="text-xl font-semibold mb-4 text-center">Smart transaction management</h2>
     <p class="text-[var(--color-text-muted)] text-center mb-8 max-w-2xl mx-auto">
@@ -149,21 +165,73 @@ import { plugins } from "../data/plugins";
     </div>
   </section>
 
-  <!-- What you get - Simple list -->
+  <!-- What you get -->
   <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]">
     <div class="max-w-3xl mx-auto px-6 py-20">
       <h2 class="text-xl font-semibold mb-8">What you get</h2>
 
       <ul class="space-y-4 text-[var(--color-text-muted)]">
-        <li>A desktop app for Mac, Windows, and Linux</li>
         <li><a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Open source</a> code you can inspect and audit</li>
-        <li>Your data in a local DuckDB database</li>
+        <li>Your data in a local DuckDB database — we never see it</li>
         <li>Bank sync via <a href="https://beta-bridge.simplefin.org/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">SimpleFIN</a> or <a href="https://www.lunchflow.app/?atp=treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Lunch Flow</a>, or CSV import</li>
-        <li>Quick tagging with customizable rules</li>
         <li>A plugin system for extending functionality</li>
         <li>Optional database encryption</li>
         <li>No account required, no subscription</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- How your agent works -->
+  <section class="border-t border-[var(--color-border)]" id="how-agent-works">
+    <div class="max-w-4xl mx-auto px-6 py-20">
+      <h2 class="text-xl font-semibold mb-4">How your agent works</h2>
+      <p class="text-[var(--color-text-muted)] mb-8">
+        Your agent talks to Treeline through the CLI. It runs queries, syncs accounts,
+        tags transactions, and manages budgets — all locally, all instantly.
+      </p>
+
+      <!-- Terminal example -->
+      <div class="agent-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line terminal-prompt">How much did I spend on groceries last month?</div>
+          <div class="terminal-line terminal-command">tl query "SELECT SUM(-amount) as total FROM transactions WHERE tags LIKE '%groceries%' AND transaction_date >= '2026-02-01'" --json</div>
+          <div class="terminal-line terminal-output">{'{"total": 847.23}'}</div>
+          <div class="terminal-line terminal-response">$847.23 — up 12% from January. Your budget was $800. Want me to look at what's driving the increase?</div>
+        </div>
+      </div>
+
+      <!-- Agent feature points -->
+      <ul class="agent-features">
+        <li>
+          <strong>Full SQL access via CLI</strong>
+          <span class="text-[var(--color-text-muted)]"> — query anything with <code>tl query</code></span>
+        </li>
+        <li>
+          <strong>Structured JSON output</strong>
+          <span class="text-[var(--color-text-muted)]"> — every query returns machine-readable data with <code>--json</code></span>
+        </li>
+        <li>
+          <strong>Works with any AI agent</strong>
+          <span class="text-[var(--color-text-muted)]"> — <a href="/agents" class="text-[var(--color-accent)]">connect Claude, ChatGPT, or any MCP-compatible client</a></span>
+        </li>
+        <li>
+          <strong>Zero-latency local access</strong>
+          <span class="text-[var(--color-text-muted)]"> — your agent reads a local DuckDB file, not a remote API</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 text-sm">
+        <a href="/agents" class="text-[var(--color-accent)] font-medium">
+          View available agents →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -216,9 +284,9 @@ import { plugins } from "../data/plugins";
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="text-xl font-semibold mb-4">Go deeper</h2>
       <p class="text-[var(--color-text-muted)] mb-8">
-        Your data is a standard DuckDB file. When you want to ask questions no app anticipated,
-        use the built-in SQL editor—or query directly from the terminal, a Jupyter notebook,
-        or any tool that speaks SQL.
+        Your data is a standard DuckDB file. Query it from the built-in SQL editor,
+        the terminal, a Jupyter notebook, or any tool that speaks SQL.
+        Or let your AI agent write the queries for you.
       </p>
       <div class="query-example">
         <div class="query-code">
@@ -338,6 +406,111 @@ import { plugins } from "../data/plugins";
     50% {
       transform: translateX(-50%) translateY(6px);
     }
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  /* Agent terminal */
+  .agent-terminal {
+    background: #1a1a2e;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .terminal-header {
+    padding: 0.75rem 1rem;
+    background: #16162a;
+    display: flex;
+    align-items: center;
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3a3a5c;
+  }
+
+  .terminal-body {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .terminal-line {
+    margin-bottom: 0.75rem;
+  }
+
+  .terminal-line:last-child {
+    margin-bottom: 0;
+  }
+
+  .terminal-prompt {
+    color: #8b8ba7;
+  }
+
+  .terminal-prompt::before {
+    content: "> ";
+    color: #6aaa83;
+  }
+
+  .terminal-command {
+    color: #e2e2f0;
+    padding-left: 1rem;
+    word-break: break-all;
+  }
+
+  .terminal-output {
+    color: #6aaa83;
+    padding-left: 1rem;
+  }
+
+  .terminal-response {
+    color: #8b8ba7;
+    border-top: 1px solid #2a2a45;
+    padding-top: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Agent features */
+  .agent-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .agent-features li {
+    font-size: 0.9375rem;
+  }
+
+  .agent-features code {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.8125rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.125rem 0.375rem;
   }
 
   /* Screenshot buttons */
