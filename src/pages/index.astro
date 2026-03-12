@@ -69,15 +69,45 @@ import { plugins } from "../data/plugins";
     }, { passive: true });
   </script>
 
-  <!-- For Your Agent -->
+  <!-- For your agent / For you — side by side -->
   <section class="border-t border-[var(--color-border)] bg-[var(--color-bg-secondary)]" id="ai-agents">
     <div class="max-w-4xl mx-auto px-6 py-20">
-      <h2 class="text-xl font-semibold mb-4">For your agent</h2>
-      <p class="text-[var(--color-text-muted)] mb-8">
-        We never see your data — it lives on your machine, which means your AI agent gets direct, unrestricted,
-        instant access to it. No API keys, no rate limits, no latency.
-      </p>
+      <div class="two-col">
+        <!-- For your agent -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">For your agent</h2>
+          <p class="text-[var(--color-text-muted)] mb-6">
+            We never see your data — it lives on your machine, which means your AI agent gets direct, unrestricted,
+            instant access to it. No API keys, no rate limits, no latency.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+            <a href="/agents" class="text-[var(--color-accent)] font-medium">
+              View agents →
+            </a>
+            <a href="https://docs.treeline.money" class="text-[var(--color-accent)] font-medium">
+              Read the docs →
+            </a>
+          </div>
+        </div>
 
+        <!-- For you -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">For you</h2>
+          <p class="text-[var(--color-text-muted)] mb-6">
+            A desktop app for Mac, Windows, and Linux. Connect your bank, tag transactions, track budgets,
+            and see everything in an interface you control.
+          </p>
+          <a href="/download" class="text-[var(--color-accent)] font-medium text-sm">
+            Download →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agent deep dive -->
+  <section class="border-t border-[var(--color-border)]">
+    <div class="max-w-4xl mx-auto px-6 py-20">
       <!-- Terminal example -->
       <div class="agent-terminal">
         <div class="terminal-header">
@@ -114,26 +144,6 @@ import { plugins } from "../data/plugins";
           <span class="text-[var(--color-text-muted)]"> — your agent reads a local DuckDB file, not a remote API</span>
         </li>
       </ul>
-
-      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-        <a href="/agents" class="text-[var(--color-accent)] font-medium">
-          View agents →
-        </a>
-        <a href="https://docs.treeline.money" class="text-[var(--color-accent)] font-medium">
-          Read the docs →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- For You -->
-  <section class="border-t border-[var(--color-border)]">
-    <div class="max-w-4xl mx-auto px-6 pt-20 pb-8">
-      <h2 class="text-xl font-semibold mb-4">For you</h2>
-      <p class="text-[var(--color-text-muted)]">
-        A desktop app for Mac, Windows, and Linux. Connect your bank, tag transactions, track budgets,
-        and see everything in an interface you control.
-      </p>
     </div>
   </section>
 
@@ -383,6 +393,20 @@ import { plugins } from "../data/plugins";
     }
     50% {
       transform: translateX(-50%) translateY(6px);
+    }
+  }
+
+  /* Two-column layout */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
     }
   }
 
