@@ -186,7 +186,7 @@ import { plugins } from "../data/plugins";
     <div class="max-w-4xl mx-auto px-6 py-20">
       <h2 class="text-xl font-semibold mb-4">How your agent works</h2>
       <p class="text-[var(--color-text-muted)] mb-8">
-        Your agent talks to Treeline through the CLI. It runs queries, syncs accounts,
+        Your agent talks to Treeline through the CLI or MCP server. It runs queries, syncs accounts,
         tags transactions, and manages budgets — all locally, all instantly.
       </p>
 
@@ -219,7 +219,7 @@ import { plugins } from "../data/plugins";
         </li>
         <li>
           <strong>Works with any AI agent</strong>
-          <span class="text-[var(--color-text-muted)]"> — <a href="/agents" class="text-[var(--color-accent)]">connect Claude, ChatGPT, or any MCP-compatible client</a></span>
+          <span class="text-[var(--color-text-muted)]"> — <a href="/agents" class="text-[var(--color-accent)]">Claude Desktop, Claude Code, Gemini CLI, OpenClaw, and any MCP client</a></span>
         </li>
         <li>
           <strong>Zero-latency local access</strong>
@@ -227,9 +227,12 @@ import { plugins } from "../data/plugins";
         </li>
       </ul>
 
-      <div class="mt-8 text-sm">
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+        <a href="/download" class="text-[var(--color-accent)] font-medium">
+          Get started →
+        </a>
         <a href="/agents" class="text-[var(--color-accent)] font-medium">
-          View available agents →
+          View all agents →
         </a>
       </div>
     </div>
