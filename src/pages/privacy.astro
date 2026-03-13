@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Privacy Policy - Treeline" description="How Treeline handles your data: everything stays local.">
+  <div class="max-w-3xl mx-auto px-6 py-12">
+    <header class="mb-12">
+      <h1 class="text-3xl font-semibold mb-4">Privacy Policy</h1>
+      <p class="text-sm text-[var(--color-text-muted)]">Last updated: March 12, 2026</p>
+    </header>
+
+    <div class="prose">
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">The short version</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          Treeline is a local-first app. Your financial data lives on your computer in a DuckDB database.
+          We don't collect it, we don't store it, and we don't have access to it.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">Data storage</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
+          All your financial data — transactions, accounts, balances, tags, budgets — is stored locally on your device
+          in a DuckDB database file. Treeline does not operate any cloud servers that store your financial data.
+        </p>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          If you use bank sync (via SimpleFIN or Lunch Flow), your credentials for those services are stored locally
+          on your device. Treeline never sees or stores your bank login credentials.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">Data collection</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          Treeline does not collect telemetry, analytics, or usage data. There are no tracking pixels,
+          no crash reporters, and no phone-home behavior. The app works entirely offline after installation.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">MCP extension (Claude Desktop)</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
+          Treeline includes an MCP server that lets AI assistants like Claude query your local financial database.
+          Here's how that works:
+        </p>
+        <ul class="text-[var(--color-text-muted)] leading-relaxed ml-4 list-disc space-y-2">
+          <li>The MCP server runs locally on your device — it reads from the same local DuckDB file the desktop app uses.</li>
+          <li>When you ask Claude a question about your finances, the MCP server executes the query locally and returns the results to Claude.</li>
+          <li>Claude (the LLM provider) sees the query results you ask about, but not your full database. This is subject to your LLM provider's privacy policy.</li>
+          <li>Treeline does not send your financial data to any server. The MCP server never makes outbound network requests with your data.</li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">Third-party services</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          If you choose to connect a bank sync provider (SimpleFIN or Lunch Flow), your transaction data flows
+          directly from that provider to your local database. Treeline does not act as an intermediary.
+          Each provider has their own privacy policy that governs their handling of your banking data.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">Data retention</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          Since all data is stored locally on your device, you have full control over retention.
+          You can delete your database file at any time to remove all financial data.
+          Treeline does not retain any copy of your data.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">The treeline.money website</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          The treeline.money website uses <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Vercel Analytics</a> to collect anonymous, aggregated page view data. No cookies are used for tracking, and no personally identifiable information is collected. The desktop app and CLI do not use any analytics.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">Open source</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          Treeline is <a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">open source</a> under the MIT license.
+          You can audit every line of code to verify these claims.
+        </p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-semibold mb-3">Contact</h2>
+        <p class="text-[var(--color-text-muted)] leading-relaxed">
+          Questions about this policy? Open an issue on <a href="https://github.com/treeline-money/treeline/issues" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">GitHub</a>
+          or reach out on <a href="https://discord.gg/EcNvBnSft5" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Discord</a>.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
