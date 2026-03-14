@@ -16,7 +16,7 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
       Version {VERSION} · <a href={releasesPage} class="text-[var(--color-accent)]">Release notes</a>
     </p>
     <p class="text-[var(--color-text-muted)] mb-8">
-      Treeline has three interfaces — a desktop app, a command-line tool, and AI agent integrations. They all share the same local database. Use any combination.
+      Three ways to use Treeline. They all share the same local database, so you can use one or all three.
     </p>
 
     <!-- Discord note -->
@@ -36,7 +36,7 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
           </svg>
         </div>
         <h3 class="chooser-title">Desktop App</h3>
-        <p class="chooser-description">See your finances in a full-featured desktop app</p>
+        <p class="chooser-description">I want a visual interface to manage my finances</p>
       </a>
 
       <a href="#cli" class="chooser-card">
@@ -46,7 +46,7 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
           </svg>
         </div>
         <h3 class="chooser-title">CLI</h3>
-        <p class="chooser-description">Terminal access + AI agents (Claude Code, Gemini CLI, OpenClaw)</p>
+        <p class="chooser-description">I prefer the terminal, or I want to use AI agents like Claude Code</p>
       </a>
 
       <a href="#claude-extension" class="chooser-card">
@@ -56,9 +56,13 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
           </svg>
         </div>
         <h3 class="chooser-title">Claude Desktop</h3>
-        <p class="chooser-description">Chat with your finances in natural language</p>
+        <p class="chooser-description">I want to ask Claude about my finances in natural language</p>
       </a>
     </div>
+
+    <p class="text-sm text-[var(--color-text-muted)] -mt-8 mb-12 text-center">
+      Not sure? Start with the desktop app — you can add the others anytime.
+    </p>
 
     <!-- Desktop App -->
     <div class="download-section" id="desktop-app">
@@ -191,13 +195,17 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
 
     <!-- Claude Desktop Extension -->
     <div class="download-section" id="claude-extension">
-      <h2 class="text-lg font-medium mb-2">Claude Desktop Extension</h2>
+      <h2 class="text-lg font-medium mb-2">Claude Desktop</h2>
       <p class="text-[var(--color-text-muted)] mb-2">
-        One-click install for <a href="https://claude.ai/download" class="text-[var(--color-accent)]" target="_blank" rel="noopener noreferrer">Claude Desktop</a>.
-        Claude gets direct access to your Treeline database — ask about spending, check budgets, tag transactions, and run queries in natural language.
+        Give <a href="https://claude.ai/download" class="text-[var(--color-accent)]" target="_blank" rel="noopener noreferrer">Claude Desktop</a> direct access to your Treeline database.
+        Ask about spending, check budgets, tag transactions, and run queries in natural language.
       </p>
       <p class="text-[var(--color-text-muted)] mb-6 text-sm">
-        Download the <code class="bg-[var(--color-bg)] px-1 rounded">.mcpb</code> file and open it. Claude Desktop will prompt you to install.
+        Claude Desktop is great for querying and analysis. You'll still need the desktop app or CLI to connect your bank and import transactions. <a href="/docs/ai-agents/mcp-server/" class="text-[var(--color-accent)]">Learn more</a>.
+      </p>
+      <h3 class="text-sm font-medium mb-3 text-[var(--color-text-muted)]">Option 1: One-click extension</h3>
+      <p class="text-[var(--color-text-muted)] mb-4 text-sm">
+        Download the <code class="bg-[var(--color-bg)] px-1 rounded">.mcpb</code> file and open it. Claude Desktop will install it automatically. Includes its own copy of the CLI — no terminal needed.
       </p>
 
       <div class="space-y-4">
@@ -244,8 +252,16 @@ const releasesPage = `https://github.com/treeline-money/treeline/releases/tag/${
         </a>
       </div>
 
-      <p class="text-sm text-[var(--color-text-muted)] mt-4">
-        Uses the <a href="https://modelcontextprotocol.io" class="text-[var(--color-accent)]" target="_blank" rel="noopener noreferrer">Model Context Protocol</a> (MCP) to connect Claude to your local Treeline database. <a href="/agents" class="text-[var(--color-accent)]">Learn more about agents</a>.
+      <h3 class="text-sm font-medium mb-3 mt-6 text-[var(--color-text-muted)]">Option 2: Use the CLI you already have</h3>
+      <p class="text-sm text-[var(--color-text-muted)] mb-3">
+        If you already installed the CLI above, you can skip the extension.
+        Open <strong>Settings > Developer > Edit Config</strong> in Claude Desktop and add:
+      </p>
+      <div class="p-4 bg-[var(--color-bg-secondary)] rounded-lg border border-[var(--color-border)]">
+        <code class="block bg-[var(--color-bg)] p-3 rounded text-sm font-mono overflow-x-auto" set:text={'{"mcpServers": {"treeline": {"command": "tl", "args": ["mcp"]}}}'}></code>
+      </div>
+      <p class="text-sm text-[var(--color-text-muted)] mt-3">
+        Restart Claude Desktop. This way <code class="bg-[var(--color-bg)] px-1 rounded">tl update</code> keeps Claude Desktop's connection current automatically.
       </p>
     </div>
 
