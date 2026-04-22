@@ -352,6 +352,18 @@ import { plugins } from "../data/plugins";
           Join Discord
         </a>
       </div>
+      <p class="mt-6 text-sm text-[var(--color-text-muted)]">
+        Looking for cloud sync, mobile, or built-in bank sync?
+        <button
+          data-tally-open="681JYe"
+          data-tally-layout="modal"
+          data-tally-width="600"
+          data-tally-emoji-text="👋"
+          data-tally-emoji-animation="wave"
+          class="waitlist-link"
+        >Join the waitlist →</button>
+      </p>
+      <script is:inline src="https://tally.so/widgets/embed.js"></script>
     </div>
   </section>
 
@@ -366,6 +378,20 @@ import { plugins } from "../data/plugins";
 </BaseLayout>
 
 <style>
+  .waitlist-link {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--color-accent);
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .waitlist-link:hover {
+    text-decoration: underline;
+  }
+
   .hero {
     min-height: calc(100vh - 80px);
     display: flex;
