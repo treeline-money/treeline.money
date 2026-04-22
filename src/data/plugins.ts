@@ -34,15 +34,6 @@ try {
 // Coming soon plugins (hardcoded until they have repos)
 const comingSoonPlugins: Plugin[] = [
   {
-    id: 'net-worth',
-    name: 'Net Worth Tracker',
-    description: 'Track your total net worth over time. See how your assets and liabilities change month to month.',
-    author: 'Treeline',
-    repo: '',
-    featured: false,
-    status: 'coming-soon',
-  },
-  {
     id: 'fire-calculator',
     name: 'FIRE Calculator',
     description: 'Calculate your path to financial independence based on your actual spending and savings rate.',
