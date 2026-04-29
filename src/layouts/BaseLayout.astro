@@ -4,9 +4,10 @@ import Analytics from '@vercel/analytics/astro';
 interface Props {
   title: string;
   description?: string;
+  ogType?: "website" | "article";
 }
 
-const { title, description = "Free, open source personal finance app. We never see your data — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL." } = Astro.props;
+const { title, description = "Free, open source personal finance app. We never see your data — no cloud, no subscriptions. Import from any bank, track budgets, set goals, and query everything with SQL.", ogType = "website" } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
 ---
 
@@ -20,7 +21,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Social -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="Treeline" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
