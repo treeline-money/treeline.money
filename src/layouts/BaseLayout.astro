@@ -251,6 +251,21 @@ const canonicalURL = new URL(Astro.url.pathname, "https://treeline.money");
 </style>
 
 <script>
+  import { track } from '@vercel/analytics';
+
+  // Referral attribution: any inbound link can append `?utm_source=<channel>`
+  // (e.g., release-notes, discord-launch, blog-backlink) and we fire a
+  // `referral_visit` custom event. Vercel groups pageviews by pathname and
+  // strips query params; custom events surface the source breakdown on any
+  // plan in the Events panel.
+  const utmSource = new URLSearchParams(window.location.search).get('utm_source');
+  if (utmSource) {
+    track('referral_visit', {
+      source: utmSource,
+      path: window.location.pathname,
+    });
+  }
+
   // Theme toggle for desktop
   const toggle = document.getElementById('theme-toggle');
   toggle?.addEventListener('click', () => {
