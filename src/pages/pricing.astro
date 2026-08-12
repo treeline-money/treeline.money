@@ -2,33 +2,42 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Pricing - Treeline" description="Treeline is free and open source. No account, no subscription, no paid tier.">
+<BaseLayout title="Pricing - Treeline" description="Treeline is free and open source. The only costs are optional, and paid to third parties.">
   <div class="max-w-3xl mx-auto px-6 py-12">
     <header class="mb-10">
-      <h1 class="text-3xl font-semibold mb-4">Free. That's the whole page.</h1>
+      <h1 class="text-3xl font-semibold mb-4">Treeline is free</h1>
       <p class="text-lg text-[var(--color-text-muted)] max-w-2xl">
-        Treeline is free and open source. No account, no subscription, no paid tier. I built it because I wanted a finance app that worked the way I think, and I want it to exist more than I want to monetize it.
+        There's no account and no subscription. The desktop app, every plugin, CSV import, SQL access, and agent integration are all included.
       </p>
     </header>
 
     <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4">Everything included</h2>
-      <p class="text-[var(--color-text-muted)] mb-4 leading-relaxed">
-        The desktop app, every plugin, CSV import, SQL access, AI agent integration — all of it. It's <a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">open source</a>, so you can read every line and verify exactly what it does with your data.
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        It can be free because of how it's built: your data lives in a local database on your machine, so there's no cloud infrastructure to pay for. It's also <a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">open source</a>, so you can read every line and verify exactly what it does with your data.
       </p>
     </section>
 
     <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4">The one real cost: bank data</h2>
+      <h2 class="text-xl font-semibold mb-4">Optional costs</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        Two things are opt-in, and paid to third parties — nothing goes to Treeline:
+      </p>
+
+      <h3 class="font-semibold mb-2">Automatic bank sync</h3>
       <p class="text-sm text-[var(--color-text-muted)]">
-        Want automatic bank sync? Two options, paid directly to the provider — Treeline takes nothing:
+        Connect your accounts through a data provider:
       </p>
       <ul class="text-sm text-[var(--color-text-muted)] mt-2 ml-4 list-disc space-y-1">
         <li><a href="https://beta-bridge.simplefin.org/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">SimpleFIN</a> — ~$1.50/month, US & Canada</li>
         <li><a href="https://www.lunchflow.app/?atp=treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Lunch Flow</a> — ~$3/month, global (US, Canada, EU, UK, Brazil, Asia)</li>
       </ul>
-      <p class="text-sm text-[var(--color-text-muted)] mt-4">
-        Or skip it entirely — CSV import is free and works with any bank.
+      <p class="text-sm text-[var(--color-text-muted)] mt-2">
+        Or skip it — CSV import works with any bank.
+      </p>
+
+      <h3 class="font-semibold mb-2 mt-8">Self-hosting a hub</h3>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Syncing between devices and remote AI access (in beta) run through a <a href="https://docs.treeline.money/remote-access/" class="text-[var(--color-accent)] hover:underline">hub you host yourself</a>. The software is free; the server is yours, so it costs whatever your server costs.
       </p>
     </section>
 
@@ -44,7 +53,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         href="/download"
         class="inline-block px-5 py-2.5 bg-[var(--color-accent)] text-white font-medium rounded-md hover:bg-[var(--color-accent-muted)] transition-colors"
       >
-        Download for free
+        Download
       </a>
     </section>
   </div>
