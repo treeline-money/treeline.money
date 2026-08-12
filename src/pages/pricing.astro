@@ -2,90 +2,49 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Pricing - Treeline" description="Treeline is free. Paid features are in the works — join the waitlist to hear when they ship.">
+<BaseLayout title="Pricing - Treeline" description="Treeline is free and open source. The only costs are optional, and paid to third parties.">
   <div class="max-w-3xl mx-auto px-6 py-12">
-    <!-- Hero: paid features up front -->
     <header class="mb-10">
-      <h1 class="text-3xl font-semibold mb-4">Paid features, in progress</h1>
+      <h1 class="text-3xl font-semibold mb-4">Treeline is free</h1>
       <p class="text-lg text-[var(--color-text-muted)] max-w-2xl">
-        Treeline will stay free. I'm exploring some optional paid add-ons to keep the project sustainable. Tell me which you'd use and I'll reach out when they ship.
+        There's no account and no subscription. The desktop app, every plugin, CSV import, SQL access, and agent integration are all included.
       </p>
     </header>
 
-    <!-- Feature cards + waitlist CTA (visible together, above the fold) -->
-    <section class="mb-16">
-      <div class="features-grid mb-10">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-            </svg>
-          </div>
-          <h3 class="feature-title">Cloud backup</h3>
-          <p class="feature-description">
-            Automatic, encrypted backups so you never lose your data.
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-            </svg>
-          </div>
-          <h3 class="feature-title">AI access anywhere</h3>
-          <p class="feature-description">
-            Ask Claude on your phone, ChatGPT, or any AI tool with custom MCP support to tag transactions, project net worth, or manage your budget. <em>(Claude Desktop and other local AI tools stay free.)</em>
-          </p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11M8 14v3m4-3v3m4-3v3" />
-            </svg>
-          </div>
-          <h3 class="feature-title">Built-in bank sync</h3>
-          <p class="feature-description">
-            Connect accounts directly in Treeline — no separate SimpleFIN or Lunch Flow signup.
-          </p>
-        </div>
-      </div>
-
-      <div class="waitlist-cta">
-        <button
-          data-tally-open="681JYe"
-          data-tally-layout="modal"
-          data-tally-width="600"
-          data-tally-emoji-text="👋"
-          data-tally-emoji-animation="wave"
-          class="waitlist-button"
-        >
-          Join the waitlist
-        </button>
-        <p class="discord-alt">
-          Prefer to chat? <a href="https://discord.gg/EcNvBnSft5" target="_blank" rel="noopener noreferrer">Join the Discord</a>.
-        </p>
-      </div>
-      <script is:inline src="https://tally.so/widgets/embed.js"></script>
+    <section class="mb-12">
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        It can be free because of how it's built: your data lives in a local database on your machine, so there's no cloud infrastructure to pay for. It's also <a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">open source</a>, so you can read every line and verify exactly what it does with your data.
+      </p>
     </section>
 
-    <!-- Divider -->
-    <hr class="border-t border-[var(--color-border)] mb-16" />
-
-    <!-- Available today: reassure that the app itself is free -->
     <section class="mb-12">
-      <h2 class="text-xl font-semibold mb-4">Available today, free</h2>
-      <p class="text-[var(--color-text-muted)] mb-4 leading-relaxed">
-        The desktop app, every plugin, CSV import, SQL access — no account, no subscription. I built Treeline because I wanted a finance app that worked the way I think. It's <a href="https://github.com/treeline-money/treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">open source</a>, so you can read every line and verify exactly what it does with your data.
+      <h2 class="text-xl font-semibold mb-4">Optional costs</h2>
+      <p class="text-[var(--color-text-muted)] mb-6">
+        Two things are opt-in, and paid to third parties — nothing goes to Treeline:
       </p>
-      <p class="text-sm text-[var(--color-text-muted)] mt-6">
-        Want automatic bank sync today? Two options, paid directly to the provider:
+
+      <h3 class="font-semibold mb-2">Automatic bank sync</h3>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Connect your accounts through a data provider:
       </p>
       <ul class="text-sm text-[var(--color-text-muted)] mt-2 ml-4 list-disc space-y-1">
         <li><a href="https://beta-bridge.simplefin.org/" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">SimpleFIN</a> — ~$1.50/month, US & Canada</li>
         <li><a href="https://www.lunchflow.app/?atp=treeline" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Lunch Flow</a> — ~$3/month, global (US, Canada, EU, UK, Brazil, Asia)</li>
       </ul>
+      <p class="text-sm text-[var(--color-text-muted)] mt-2">
+        Or skip it — CSV import works with any bank.
+      </p>
+
+      <h3 class="font-semibold mb-2 mt-8">Self-hosting a hub</h3>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Syncing between devices and remote AI access (in beta) run through a <a href="https://docs.treeline.money/remote-access/" class="text-[var(--color-accent)] hover:underline">hub you host yourself</a>. The software is free; the server is yours, so it costs whatever your server costs.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <p class="text-[var(--color-text-muted)]">
+        Questions? <a href="https://discord.gg/EcNvBnSft5" target="_blank" rel="noopener noreferrer" class="text-[var(--color-accent)] hover:underline">Join the Discord</a>.
+      </p>
     </section>
 
     <!-- Final CTA -->
@@ -94,72 +53,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         href="/download"
         class="inline-block px-5 py-2.5 bg-[var(--color-accent)] text-white font-medium rounded-md hover:bg-[var(--color-accent-muted)] transition-colors"
       >
-        Download for free
+        Download
       </a>
     </section>
   </div>
 </BaseLayout>
-
-<style>
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-
-  .feature-card {
-    padding: 1.5rem;
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-  }
-
-  .feature-icon {
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
-  }
-
-  .feature-title {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-  }
-
-  .feature-description {
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-  }
-
-  .waitlist-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--color-accent);
-    color: white;
-    font-weight: 500;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.15s ease;
-  }
-
-  .waitlist-button:hover {
-    background: var(--color-accent-muted);
-  }
-
-  .discord-alt {
-    margin-top: 1.25rem;
-    font-size: 0.875rem;
-    color: var(--color-text-muted);
-  }
-
-  .discord-alt a {
-    color: var(--color-accent);
-  }
-
-  .discord-alt a:hover {
-    text-decoration: underline;
-  }
-</style>
